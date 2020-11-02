@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Firebolt | Music Your Way</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -52,12 +52,13 @@ export default function Home() {
 
       <footer className={styles.footer}>
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="https://www.deezer.com/us/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
+          <img src="/firebolt.svg" alt="Firebolt Logo" className={styles.logo} />
+          {' '} Music data powered by Deezer
+          
         </a>
       </footer>
     </div>
