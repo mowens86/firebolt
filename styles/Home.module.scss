@@ -4,10 +4,10 @@ $lightGray: #8D99AE;
 $offWhite: #EDF2F4;
 $lightRed: #EF233C;
 $red: #D90429;
+$black: #000;
 
 .container {
   min-height: 100vh;
-  padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,8 +30,7 @@ $red: #D90429;
   text-shadow: 1px 1px 0px $offWhite;
   transition: .25s all ease-in-out;
   &:hover {
-    color: $lightRed;
-    text-shadow: 1px 1px 0px $lightGray;
+    text-shadow: -1px -1px 0px $offWhite;
   }
 }
 
@@ -40,24 +39,20 @@ $red: #D90429;
   height: 100px;
   border-top: 1px solid $offWhite;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: $black;
 }
 
-.footer img {
-  margin-left: 0.5rem;
-}
-
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.footerLink {
+  padding-top: 1rem;
   color: $offWhite;
   text-decoration: underline;
   transition: .15s all ease-in-out;
 }
 
-.footer a:hover {
+.footerLink:hover {
   color: $lightRed;
 }
 
@@ -73,6 +68,9 @@ $red: #D90429;
 
 .logo {
   height: 1em;
+}
+.deezer {
+  width: 150px;
 }
 
 @media (max-width: 600px) {
