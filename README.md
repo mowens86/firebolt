@@ -2,19 +2,15 @@
 
 ## The to-do list
 
-### Finding a suitable music API
-[Audiomack](https://audiomack.com/)
-- Might be a winner
-[Deezer](https://www.deezer.com/us/)
-- Only 30 seconds of playtime for music in the US
-[Spotify](https://www.spotify.com/us/)
-- Can't choose songs based by titles
+### Find a suitable music API
+After lots of consideration, it looks like I'll be using [Deezer](https://www.deezer.com/us/) as the API for this project. We might be limited to 30second songs but I think this will lead to an overall fun Next.js project.
 
-
-
-- Figure out infrastructure and functionality
-- Set-up application page
-- Set-up styling
-- Create oAuth login
+### Functionality wants/needs
+- oAuth Login
+- Create Playlist
+- Favorites
+- Search Bar
+- Music Player
+- Mobile Responsiveness (how in the world will this look on mobile o.0)
 
 
