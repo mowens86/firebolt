@@ -21,4 +21,6 @@ Resources:
 
 [Datestamp - 11/3/2020] An interesting find, oAuth 2.0 and Auth0 are not the same. I think with using Deezer we won't be able to use Auth0, atleast I am  not sure how yet as oAuth and Auth0 logins are very new to me.
 
-
+Notes to self
+- Currently completed first step of oAuth process for Deezer
+- Once first step is complete, try cutting the code in the last part of the URL and using next.config.js to redirect using all the environment variables and cut code to get the access token. 

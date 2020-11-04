@@ -3,11 +3,11 @@ import styles from '../styles/Home.module.scss'
 import Link from 'next/link'
 
 
-export default Dashboard = () => {
+export default Redirect = () => {
     return (
       <div className={styles.container}>
         <Head>
-          <title>Firebolt | Dashboard</title>
+          <title>Firebolt | Redirecting</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
   
@@ -15,7 +15,7 @@ export default Dashboard = () => {
           
           <section>
               <h1 className={styles.title}>Firebolt</h1>
-              <h2 className={styles.subTitle}>Welcome to the dashboard</h2>
+              <h2 className={styles.subTitle}>Hold your musical notes, we're redirecting...</h2>
           </section>
   
         </main>
