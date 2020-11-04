@@ -1,10 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital@0;1&family=Rubik:ital,wght@0,700;1,700&display=swap');
 
+// Sass Variables
+$gray: #2B2D42;
+$lightGray: #8D99AE;
+$offWhite: #EDF2F4;
+$lightRed: #EF233C;
+$red: #D90429;
+$black: #000;
+$headerFont: 'Rubik', sans-serif;
+$bodyFont: 'Lato', sans-serif;
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: $bodyFont;
 }
 
 h1,
@@ -13,7 +23,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Rubik', sans-serif;
+  font-family: $headerFont;
   font-style: italic;
 }
 

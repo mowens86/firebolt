@@ -5,6 +5,9 @@ $offWhite: #EDF2F4;
 $lightRed: #EF233C;
 $red: #D90429;
 $black: #000;
+$headerFont: 'Rubik', sans-serif;
+$bodyFont: 'Lato', sans-serif;
+
 
 .container {
   min-height: 100vh;
@@ -24,13 +27,66 @@ $black: #000;
   align-items: center;
 }
 
+.title, .subTitle {
+  margin: 0 auto;
+}
+
 .title {
-  color: $red;
+  background-color: $red;
   font-size: 4rem;
-  text-shadow: 1px 1px 0px $offWhite;
-  transition: .25s all ease-in-out;
-  &:hover {
-    text-shadow: -1px -1px 0px $offWhite;
+  background-image: linear-gradient(
+    -75deg,
+    transparent 0,
+    transparent 5%,
+    rgba(255, 255, 255, 0.5) 5%,
+    rgba(255, 255, 255, 0.75) 10%,
+    transparent 10%,
+    transparent 100%
+  );
+
+  background-size: 200% 100%;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation-duration: 10s;
+  animation-name: shine;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shine {
+  20%, 100% {
+    background-position: -120% 0;
+  }
+  0% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: -120% 0;
+  }
+}
+
+.subTitle {
+  color: $offWhite;
+}
+
+.linkWrapper {
+  margin: 0 auto;
+  text-align: center;
+  .link {
+    background-color: $lightRed;
+    font-family: $headerFont;
+    display: inline-block;
+    padding: .5rem 1.5rem;
+    border: 1px solid $offWhite;
+    border-radius: 10px;
+    color: $offWhite;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    transition: .2s all ease-in-out;
+  }
+  .link:hover {
+    background-color: $red;
   }
 }
 

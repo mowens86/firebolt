@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -10,16 +11,15 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        
         <section>
-          <div>
             <h1 className={styles.title}>Firebolt</h1>
-          </div>
-        </section>
-
-        <section>
-          <div>
-
-          </div>
+            <h2 className={styles.subTitle}>Music your way, all of the time...</h2>
+            <div className={styles.linkWrapper}>
+              <Link href={`https://connect.deezer.com/oauth/auth.php?app_id=${process.env.deezer_app_id}&redirect_uri=http://localhost:3000/dashboard&perms=basic_access,email`}>
+                  <a className={styles.link}>Login</a>
+              </Link>
+            </div>
         </section>
 
       </main>
