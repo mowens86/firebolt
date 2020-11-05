@@ -11,16 +11,18 @@ After lots of consideration, it looks like I'll be using [Deezer](https://www.de
 - Music Player
 - Mobile Responsiveness (how in the world will this look on mobile o.0)
 
-### Learning about Auth0 in Next.js
+### The Firebolt Journey/Journal
 
-Resources:
-[Auth0 Guide](https://auth0.com/blog/ultimate-guide-nextjs-authentication-auth0/) | [YouTube Video - How to add Autho0 to Nextjs](https://www.youtube.com/watch?v=vrj9gCSjzw0)
+#### 11/4/2020
 
-### Learning about auth0 in Next.js
-[NextAuth.js Homepage](https://auth0.com/blog/ultimate-guide-nextjs-authentication-auth0/)
+Really stuck on how Next.js works with oAuth for the Deezer API. I am only able to direct to the login for Deezer and get back the first part of the code needed to complete authorization for the Firebolt App. On a positive note I learned about the built-in encodeUrlComponent() function to help with the the url.
 
-[Datestamp - 11/3/2020] An interesting find, oAuth 2.0 and Auth0 are not the same. I think with using Deezer we won't be able to use Auth0, atleast I am  not sure how yet as oAuth and Auth0 logins are very new to me.
+#### 11/3/2020
 
-Notes to self
-- Currently completed first step of oAuth process for Deezer
-- Once first step is complete, try cutting the code in the last part of the URL and using next.config.js to redirect using all the environment variables and cut code to get the access token. 
+Learned a little about Auth0, NextAuth, and oAuth, but ultimately found I don't really need it for the Deezer API since they require a few steps to get an authorization. Currently completed first step of oAuth process for Deezer. My plan, once first step is complete, try cutting the code in the last part of the URL and using next.config.js to redirect using all the environment variables and cut code to get the access token.
+
+- Learned about Auth0 in Next.js - [Auth0 Guide](https://auth0.com/blog/ultimate-guide-nextjs-authentication-auth0/) | [YouTube Video - How to add Autho0 to Nextjs](https://www.youtube.com/watch?v=vrj9gCSjzw0)
+
+- Learned about NextAuth.js - [NextAuth.js Homepage](https://auth0.com/blog/ultimate-guide-nextjs-authentication-auth0/)
+
+
