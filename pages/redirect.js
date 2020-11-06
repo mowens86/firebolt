@@ -2,10 +2,11 @@ import Head from 'next/head'
 import Footer from './components/footer'
 import styles from '../styles/Home.module.scss'
 import Link from 'next/link'
-import Router from 'next/router'
-
+import { useRouter } from 'next/router'
 
 export default function Redirect() {
+
+    const router = useRouter();
 
     return (
       <div className={styles.container}>
@@ -20,11 +21,13 @@ export default function Redirect() {
               <h1 className={styles.title}>Firebolt</h1>
               <h2 className={styles.subTitle}>Hold your musical notes, almost done. Click below to continue...</h2>
               <div className={styles.linkWrapper}>
-                <Link href={`https://connect.deezer.com/oauth/access_token.php?app_id=${process.env.deezer_app_id}&secret=${process.env.deezer_secret}&code=${redirectCode}`}>
+                <Link href={`https://connect.deezer.com/oauth/access_token.php?app_id=${process.env.deezer_app_id}&secret=${process.env.deezer_secret}&code=`}>
                     <a className={styles.link}>Click Here</a>
                 </Link>
             </div>
           </section>
+    
+         <div>{router.asPath}</div>
   
         </main>
   

@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Footer from './components/footer'
 import styles from '../styles/Home.module.scss'
 import Link from 'next/link'
-import React from 'react'
 
 export default function Home() {
 

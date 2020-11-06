@@ -13,6 +13,10 @@ After lots of consideration, it looks like I'll be using [Deezer](https://www.de
 
 ### The Firebolt Journey/Journal
 
+### 11/5/2020
+
+Researched the next/router Api to see if that might be able to help with my url problem. Figured it out before giving up for the night. Importing the useRouter and console.logging the asPath part of the router will pull in the code needed in order to grab the code. Looking forward to some bigger steps in the next couple of days.
+
 #### 11/4/2020
 
 Really stuck on how Next.js works with oAuth for the Deezer API. I am only able to direct to the login for Deezer and get back the first part of the code needed to complete authorization for the Firebolt App. On a positive note I learned about the built-in encodeUrlComponent() function to help with the the url.
