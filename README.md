@@ -13,9 +13,13 @@ After lots of consideration, it looks like I'll be using [Deezer](https://www.de
 
 ### The Firebolt Journey/Journal
 
-### 11/5/2020
+#### 11/6/2020
 
-Researched the next/router Api to see if that might be able to help with my url problem. Figured it out before giving up for the night. Importing the useRouter and console.logging the asPath part of the router will pull in the code needed in order to grab the code. Looking forward to some bigger steps in the next couple of days.
+Attempted to slice code out of the pulled in url but from the first step of the Deezer API but am currently getting a "Warning: Prop 'href' did not match" It looks like server isn't producing the code into the url link but the client side is and is giving this mismatch. Even so, if I got it to work I'd be linking over to the access token, which in essence, doesn't do what I need for the user. I think I need to think about how to get the access token through different means. Possibly using a GET request after I get the initial code first steps code of the Deezer Api.
+
+#### 11/5/2020
+
+Researched the next/router Api to see if that might be able to help with my url problem. Figured it out before giving up for the night. Importing the useRouter and console.logging the asPath part of the router will pull in the url and includes the code needed from Deezer. Looking forward to some bigger steps in the next couple of days.
 
 #### 11/4/2020
 
