@@ -3,11 +3,21 @@ import Footer from './components/footer'
 import styles from '../styles/Home.module.scss'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import useSWR from 'swr'
 
-export default function Redirect() {
+export default function Redirect({ data }) {
 
     const router = useRouter();
     const generatedCode = router.asPath.slice(15, 47);
+    const fetcher = url => fetch(url).then(res => res.json());
+
+    async function getToken() {
+        // Fetch data from external API
+        const { data, error } = useSWR(`https://connect.deezer.com/oauth/access_token.php?app_id=${process.env.deezer_app_id}&secret=${process.env.deezer_secret}&code=${generatedCode}`, fetcher);
+
+        if (error) return "An error has occurred.";
+        if (!data) return "Loading...";
+    }
 
     return (
       <div className={styles.container}>
@@ -27,7 +37,7 @@ export default function Redirect() {
                 </Link>
             </div>
           </section>
-    <div>{generatedCode}</div>
+    <div>{data}</div>
         </main>
   
         <Footer/>
