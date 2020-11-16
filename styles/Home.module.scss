@@ -71,6 +71,7 @@ $bodyFont: 'Lato', sans-serif;
 .linkWrapper {
   margin: 0 auto;
   text-align: center;
+  cursor: pointer;
   .link {
     background-color: $lightRed;
     font-family: $headerFont;

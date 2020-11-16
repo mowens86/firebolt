@@ -4,25 +4,25 @@ import styles from '../styles/Home.module.scss'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-function Test({ data }) {
-  // Render data...
+
+export default function Page(props) {
+
   return (
-  <div>List of stuff: {data}</div>
+    <div>
+        <Head>
+          <title>Firebolt | Redirecting</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <p>{props.data.id}</p>
+        <p>{props.data.title}</p>
+        <p>{props.data.link}</p>
+        {console.log(props.data)}
+    </div>
   )
 }
 
-// This gets called on every request
-export async function getServerSideProps() {
-  // Fetch data from external API
-  const res = await fetch(`https://api.deezer.com/playlist/4341978/tracks?index=3&limit=7`)
+export const getStaticProps = async () => {
+  const res = await fetch('https://api.deezer.com/album/302127');
   const data = await res.json();
-
-  // Pass data to the page via props
-  return { props: 
-    { 
-      data
-    } 
-  }
+  return { props: { data } }
 }
-
-export default Test
