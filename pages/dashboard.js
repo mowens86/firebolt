@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Footer from './components/footer';
 import styles from '../styles/Home.module.scss';
+import {getSession} from 'next-auth/client';
 import Link from 'next/link';
 
 export default function Dashboard() {

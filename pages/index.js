@@ -2,7 +2,6 @@ import Head from 'next/head';
 import Footer from './components/footer';
 import styles from '../styles/Home.module.scss';
 import React from 'react';
-import Link from 'next/link';
 import { signIn, signOut, useSession } from 'next-auth/client';
 
 export default function Home() {
@@ -38,8 +37,6 @@ export default function Home() {
           )
         }
         
-
-
       </main>
     
       <Footer/>

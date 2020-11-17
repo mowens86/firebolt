@@ -13,10 +13,16 @@ After lots of consideration, it looks like I'll be using [Deezer](https://www.de
 
 ### The Firebolt Journey/Journal
 
+#### 11/16/2020
+
+Attempted to try using NextAuth.js, using the custom provider however I am unsure of what links to input in the custom space as it isn't clear cut with the way Deezer exaplins it. After continuously trying different things and reading the docs, I may have stumbled across a complete simulation oAuth 2.0 access with Next.js and Deezer. I am pretty stoked to get through to the callback page after authorization. Will need to test this out more to ensure this is actually right.
+
 #### 11/14/2020
+
 Short update, currently taking a ReactJS course and decided to break for a bit and ended up doing more oAuth research, it looks like NextAuth.js just might be my problem solver for the oAuth login afterall. Note to self to check out the "Using a custom provider" in the NextAuth.js [documentation](https://next-auth.js.org/configuration/providers)
 
 #### 11/7/2020
+
 Will come back to this. After much debate, I think I need to learn more about ReactJS, to get more backbone on how it works, and then learn more about NextJS and oAuth. I'll be back...in maybe a few weeks after some udemy courses and youtube.
 
 #### 11/6/2020
