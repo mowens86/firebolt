@@ -13,37 +13,45 @@ const options = {
 
   // Configure one or more authentication providers
   providers: [
-    Providers.GitHub({
-      clientId: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET,
+    Providers.Google({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET
     }),
-    {
-      id: 'deezer',
-      name: 'Deezer',
-      type: 'oauth',
-      version: '2.0',
-      scope: `user-read-email`,
-      params: { grant_type: 'authorization_code' },
-      accessTokenUrl: `https://connect.deezer.com/oauth/access_token.php`,
-      authorizationUrl: `https://connect.deezer.com/oauth/auth.php?response_type=token`,
-      profileUrl: `https://api.deezer.com/user/me`,
-      profile: (profile) => {
-        return {
-          id: profile.id,
-          name: profile.name,
-          email: profile.email,
-          image: profile.picture
-        }
-      },
-      clientId: process.env.DEEZER_APP_ID,
-      clientSecret: process.env.DEEZER_SECRET,
-    }
+    // Providers.GitHub({
+    //   clientId: process.env.GITHUB_ID,
+    //   clientSecret: process.env.GITHUB_SECRET
+    // }),
+    // Providers.Spotify({
+    //   clientId: process.env.SPOTIFY_CLIENT_ID,
+    //   clientSecret: process.env.SPOTIFY_CLIENT_SECRET
+    // }),
+    // {
+    //   id: 'deezer',
+    //   name: 'Deezer',
+    //   type: 'oauth',
+    //   version: '2.0',
+    //   scope: `basic_access-email`,
+    //   params: { grant_type: 'authorization_code' },
+    //   accessTokenUrl: `https://connect.deezer.com/oauth/access_token.php`,
+    //   authorizationUrl: `https://connect.deezer.com/oauth/auth.php?response_type=token`,
+    //   profileUrl: `https://api.deezer.com/user/me`,
+    //   profile: (profile) => {
+    //     console.log(profile);
+    //     return {
+    //       id: profile.id,
+    //       name: profile.name,
+    //       email: profile.email,
+    //       image: profile.picture
+    //     };
+    //   },
+    //   clientId: process.env.DEEZER_APP_ID,
+    //   clientSecret: process.env.DEEZER_SECRET,
+    // }
   ],
-  // debug: process.env.NODE_ENV === 'development',
+  debug: true,
   // secret: process.env.AUTH_SECRET,
   // jwt: {
   //   secret: process.env.JWT_SECRET,
-  // }
 };
 
 export default (req, res) => NextAuth(req, res, options);

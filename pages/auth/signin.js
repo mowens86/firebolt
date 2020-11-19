@@ -9,7 +9,6 @@ export default function SignIn({ providers }) {
           <button onClick={() => signIn(provider.id)}>Sign in with {provider.name}</button>
         </div>
       ))}
-      {console.log(providers.deezer.callbackUrl)}
     </>
   )
 }

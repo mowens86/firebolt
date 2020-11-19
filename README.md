@@ -1,4 +1,5 @@
 # ![alt text](https://github.com/mowens86/firebolt/blob/main/public/firebolt48.png "Firebolt") Firebolt Music App
+## 30 Second Clips of Pure Bliss
 
 ### Find a suitable music API
 After lots of consideration, it looks like I'll be using [Deezer](https://www.deezer.com/us/) as the API for this project. We might be limited to 30second songs but I think this will lead to an overall fun Next.js project.
@@ -12,6 +13,11 @@ After lots of consideration, it looks like I'll be using [Deezer](https://www.de
 - Mobile Responsiveness (how in the world will this look on mobile o.0)
 
 ### The Firebolt Journey/Journal
+
+
+#### 11/18/2020
+
+After much research it seems like the custom provider set-up and Next Auth itself may have an issue. For the time being I am going to continue on with creating a sign-in with other pre-configured providers like Google, FB, and Twitter. I think those will be sufficient. Plus, I'll create my own Firebolt sign-in page, which will be fun designing.
 
 #### 11/17/2020
 
