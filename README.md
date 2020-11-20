@@ -14,6 +14,9 @@ After lots of consideration, it looks like I'll be using [Deezer](https://www.de
 
 ### The Firebolt Journey/Journal
 
+#### 11/19/2020
+
+Did a little research on routers and how it can be used with preventdefault.
 
 #### 11/18/2020
 
