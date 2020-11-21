@@ -5,11 +5,11 @@ import { useRouter } from 'next/router';
 export default function Searchbar( props, { initialQuery, onSave }) {
     const [ newQuery, setNewQuery ] = useState(initialQuery);
 
-    const searchHandler = (e) => {
-        e.preventDefault();
-        router.push('/dashboard');
-        onSave(newQuery);
-    }
+    // const searchHandler = (e) => {
+    //     e.preventDefault();
+    //     router.push('/dashboard');
+    //     onSave(newQuery);
+    // }
 
     return (
         <section>
@@ -19,9 +19,10 @@ export default function Searchbar( props, { initialQuery, onSave }) {
                     id="searchValue" 
                     type="text" 
                     name="query" 
-                    onChange={(e) => setNewQuery(e.target.value)}
+                    value={newQuery}
+                    onInput={(e) => setNewQuery(e.target.value)}
                     placeholder="Search by song title, artist, album..." />
-                <button onClick={searchHandler()}>Search</button>
+                <button onClick={console.log(() => setNewQuery(newQuery))}>Search</button>
                 {console.log(props.data)}
             </form>
             
