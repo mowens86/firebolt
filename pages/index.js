@@ -30,9 +30,14 @@ export default function Home() {
           session && (
             <section>
               <h1 className={styles.title}>Firebolt</h1>
-              <h2 className={styles.subTitle}>Signed in as {session.user.name}</h2>
+              <h2 className={styles.subTitle}>Signed in as {session.user.name}, go to the...</h2>
               <div className={styles.linkWrapper}>
-                <a onClick={signOut} className={styles.link}>Sign Out</a>
+                <Link href="/dashboard">
+                  <a className={styles.link}>Dashboard</a>
+                </Link>
+              </div>
+              <div className={styles.signOutWrapper}>
+                <a className={styles.signOut} onClick={signOut}>Sign Out Here</a>
               </div>
             </section>
           )

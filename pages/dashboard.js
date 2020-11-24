@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import Searchbar from './components/searchbar';
+import Searchbar from './components/searchbar/searchbar';
 import Footer from './components/footer';
 import styles from '../styles/Home.module.scss';
 import {getSession} from 'next-auth/client';
