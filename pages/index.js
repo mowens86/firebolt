@@ -16,17 +16,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        {!session && (
-              <section>
-                  <h1 className={styles.title}>Firebolt</h1>
-                  <h2 className={styles.subTitle}>30 second clips of pure audio bliss...</h2>
-                  <div className={styles.linkWrapper}>
-                    <a onClick={signIn} className={styles.link}>Login</a>
-                  </div>
-              </section>
-        )}
-        
-        {
+      {
           session && (
             <section>
               <h1 className={styles.title}>Firebolt</h1>
@@ -42,6 +32,16 @@ export default function Home() {
             </section>
           )
         }
+        
+        {!session && (
+              <section>
+                  <h1 className={styles.title}>Firebolt</h1>
+                  <h2 className={styles.subTitle}>30 second clips of pure audio bliss...</h2>
+                  <div className={styles.linkWrapper}>
+                    <a onClick={signIn} className={styles.link}>Login</a>
+                  </div>
+              </section>
+        )}
         
       </main>
     

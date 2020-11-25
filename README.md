@@ -14,6 +14,10 @@ After lots of consideration, it looks like I'll be using [Deezer](https://www.de
 
 ### The Firebolt Journey/Journal
 
+#### 11/24/2020
+
+Found out in a [closed issue](https://github.com/nextauthjs/next-auth/issues/350) that for custom sign in pages using Next-Auth that you need to manually add-in a callbackurl otherwise it will just redirect back into the signin page rather than the callbackurl. The Next-Auth portion of this app is basically complete will need to style the custom signin page and begin working on the dashboard. 
+
 #### 11/19/2020
 
 Did a little research on routers and how it can be used with preventdefault.

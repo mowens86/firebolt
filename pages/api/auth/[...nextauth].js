@@ -2,13 +2,9 @@ import NextAuth from 'next-auth';
 import Providers from 'next-auth/providers';
 
 const options = {
-  // Pages
+  // // Pages
   pages: {
     signIn: '/auth/signin',
-    signOut: '/auth/signout',
-    error: '/auth/error', // Error code passed in query string as ?error=
-    verifyRequest: '/auth/verify-request', // (used for check email message)
-    newUser: null // If set, new users will be directed here on first sign in
   },
 
   // Configure one or more authentication providers
@@ -17,6 +13,14 @@ const options = {
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET
     }),
+    // Providers.Facebook({
+    //   clientId: process.env.FACEBOOK_CLIENT_ID,
+    //   clientSecret: process.env.FACEBOOK_CLIENT_SECRET
+    // }),
+    // Providers.Twitter({
+    //   clientId: process.env.TWITTER_CLIENT_ID,
+    //   clientSecret: process.env.TWITTER_CLIENT_SECRET
+    // }),
     // Providers.GitHub({
     //   clientId: process.env.GITHUB_ID,
     //   clientSecret: process.env.GITHUB_SECRET
