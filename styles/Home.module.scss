@@ -84,6 +84,7 @@ $bodyFont: 'Lato', sans-serif;
   color: $offWhite;
   cursor: pointer;
   margin: 0 auto;
+  transition: .2s all ease-in-out;
 }
 
 .signOut:hover {
