@@ -1,7 +1,6 @@
 import React from 'react';
-import Head from 'next/head';
+import Layout from './components/layout/layout';
 import Searchbar from './components/searchbar/searchbar';
-import Footer from './components/footer';
 import styles from '../styles/Home.module.scss';
 import { signIn, useSession } from 'next-auth/client';
 // import Router, { useRouter } from 'next/router';
@@ -13,12 +12,7 @@ export default function Dashboard(props) {
 
   if (!session) {
     return (
-      <div className={styles.container}>
-        <Head>
-          <title>Firebolt | Not Signed In</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <main className={styles.main}>
+      <Layout>
           <section>
               <h1 className={styles.title}>Firebolt</h1>
               <h2 className={styles.subTitle}>You're not signed in. Please Login.</h2>
@@ -26,20 +20,12 @@ export default function Dashboard(props) {
                 <a onClick={signIn} className={styles.link}>Login</a>
               </div>
           </section>
-        </main>
-        <Footer/>
-      </div>
+      </Layout>
     );
   }
 
     return (
-      <div className={styles.container}>
-        <Head>
-          <title>Firebolt | Dashboard</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-  
-        <main className={styles.main}>
+      <Layout>
           <section>
               <h1 className={styles.title}>Firebolt</h1>
               <h2 className={styles.subTitle}>Welcome to the dashboard</h2>
@@ -49,11 +35,7 @@ export default function Dashboard(props) {
           
           <Searchbar />
 
-  
-        </main>
-  
-        <Footer/>
-      </div>
+      </Layout>
     );
   }
 

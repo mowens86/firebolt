@@ -1,5 +1,4 @@
-import Head from 'next/head';
-import Footer from './components/footer';
+import Layout from '../pages/components/layout/layout';
 import styles from '../styles/Home.module.scss';
 import React from 'react';
 import Link from 'next/link';
@@ -9,13 +8,8 @@ export default function Home() {
   const [ session, loading ] = useSession();
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Firebolt | Music Your Way</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
+    <Layout>
+      
       {
           session && (
             <section>
@@ -42,11 +36,7 @@ export default function Home() {
                   </div>
               </section>
         )}
-        
-      </main>
     
-      <Footer/>
-  
-    </div>
+      </Layout>
   )
 }

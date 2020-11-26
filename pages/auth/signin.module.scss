@@ -7,3 +7,27 @@ $red: #D90429;
 $black: #000;
 $headerFont: 'Rubik', sans-serif;
 $bodyFont: 'Lato', sans-serif;
+
+.linkWrapper {
+    margin: 0 auto;
+    text-align: center;
+    width: 200px;
+    .link {
+      cursor: pointer;
+      background-color: $lightRed;
+      font-family: $headerFont;
+      display: block;
+      padding: .5rem 1.5rem;
+      border: 1px solid $offWhite;
+      border-radius: 10px;
+      color: $offWhite;
+      font-size: .85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 1rem;
+      transition: .2s all ease-in-out;
+    }
+    .link:hover {
+      background-color: $red;
+    }
+  }

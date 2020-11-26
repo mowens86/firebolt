@@ -1,15 +1,25 @@
 import React from 'react';
+import Layout from '../components/layout/layout';
+import styles from './signin.module.scss';
 import { providers, signIn } from 'next-auth/client';
 
 export default function SignIn({ providers }) {
   return (
-    <>
+    <Layout>
       {Object.values(providers).map(provider => (
-        <div key={provider.name}>
-          <button onClick={() => signIn(provider.id, { callbackUrl: 'http://localhost:3000/' })}>Sign in with {provider.name}</button>
+        <div >
+          <div 
+              className={styles.linkWrapper} 
+              key={provider.name}>
+            <a 
+              className={styles.link} 
+              onClick={() => signIn(provider.id, { callbackUrl: 'http://localhost:3000/' })}
+              >Sign in with {provider.name}
+            </a>
+          </div>
         </div>
       ))}
-    </>
+    </Layout>
   )
 }
 
