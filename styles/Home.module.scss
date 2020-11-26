@@ -80,11 +80,11 @@ $bodyFont: 'Lato', sans-serif;
 }
 
 .signOut {
-  text-decoration: underline;
+  padding-top: 1rem;
   color: $offWhite;
+  text-decoration: underline;
+  transition: .15s all ease-in-out;
   cursor: pointer;
-  margin: 0 auto;
-  transition: .2s all ease-in-out;
 }
 
 .signOut:hover {

@@ -16,18 +16,36 @@ $bodyFont: 'Lato', sans-serif;
 }
 
 .overlay {
-  background-image: linear-gradient(to right, rgba(0,0,0,0.25), rgba(0,0,0,0.75));
+  background-image: linear-gradient(to right, rgba(0,0,0,0.25), rgba(0,0,0,0.85));
 }
 
 .signInWrapper {
-  background-image: url("../../public/records.jpg");
+  overflow: hidden;
+  position: relative;
   border: 1px solid $lightGray;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 
 .signInWrapper:hover {
   border: 1px solid $offWhite;
 }
+
+
+.backgroundImage {
+  background-image: url("../../public/records.jpg");
+  border-radius: 10px;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  transition: all 1s ease-in-out;
+}
+
+.signInWrapper:hover .backgroundImage,
+.signInWrapper:focus .backgroundImage {
+  transform: scale(1.02);
+}
+
 
 .logoWrapper {
   padding-top: 2rem;
@@ -36,7 +54,7 @@ $bodyFont: 'Lato', sans-serif;
 }
 
 .logo {
-  height: 5rem;
+  height: 4rem;
 }
 
 .title, .subTitle {
@@ -45,7 +63,7 @@ $bodyFont: 'Lato', sans-serif;
 
 .title {
   background-color: $red;
-  font-size: 2rem;
+  font-size: 2.5rem;
   background-image: linear-gradient(
     -75deg,
     transparent 0,

@@ -31,16 +31,10 @@ export default function Dashboard(props) {
               <h2 className={styles.subTitle}>Welcome to the dashboard</h2>
           </section>
 
-          {console.log(props.data.data.[0].title)}
+          {/* {console.log(props.data.data.[0].title)} */}
           
           <Searchbar />
 
       </Layout>
     );
-  }
-
-  export const getStaticProps = async () => {
-    const res = await fetch('https://api.deezer.com/search?q=good+things');
-    const data = await res.json();
-    return { props: { data } }
   }

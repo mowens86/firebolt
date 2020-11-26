@@ -21,3 +21,9 @@ export default function Searchbar( props ) {
         </section>
     )
   }
+
+  export const getStaticProps = async () => {
+    const res = await fetch(`https://api.deezer.com/search?q=${newQuery}`);
+    const data = await res.json();
+    return { props: { data } }
+  }
