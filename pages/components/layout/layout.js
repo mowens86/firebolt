@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Footer from '../footer/footer';
+import Footer from './footer/footer';
 import styles from './layout.module.scss';
 import React from 'react';
 import Link from 'next/link';

@@ -1,4 +1,4 @@
-import styles from '../../../styles/Home.module.scss';
+import styles from './searchbar.module.scss';
 import React, { useState } from 'react';
 
 export default function Searchbar( props ) {

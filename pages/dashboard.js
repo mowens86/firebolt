@@ -1,11 +1,9 @@
 import React from 'react';
 import Layout from './components/layout/layout';
-import Searchbar from './components/searchbar/searchbar';
+import DashboardLayout from './components/dashboard/dashboardLayout';
 import styles from '../styles/Home.module.scss';
 import { signIn, useSession } from 'next-auth/client';
-// import Router, { useRouter } from 'next/router';
 // import { getSession } from 'next-auth/client';
-// import Link from 'next/link';
 
 export default function Dashboard(props) {
   const [session, loading] = useSession();
@@ -26,15 +24,17 @@ export default function Dashboard(props) {
 
     return (
       <Layout>
-          <section>
-              <h1 className={styles.title}>Firebolt</h1>
-              <h2 className={styles.subTitle}>Welcome to the dashboard</h2>
-          </section>
-
-          {/* {console.log(props.data.data.[0].title)} */}
-          
-          <Searchbar />
+        
+          <DashboardLayout>
+          {console.log(props.chart.tracks.data.[0].title_short)}
+          </DashboardLayout>
 
       </Layout>
     );
+  }
+
+  export const getStaticProps = async () => {
+    const res = await fetch(`https://api.deezer.com/chart`);
+    const chart = await res.json();
+    return { props: { chart } }
   }

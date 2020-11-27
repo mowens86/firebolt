@@ -1,9 +1,4 @@
-import Head from 'next/head'
-import Footer from './components/footer'
-import styles from '../styles/Home.module.scss'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import Image from 'next/image';
+import Head from 'next/head';
 
 
 export default function Page(props) {
