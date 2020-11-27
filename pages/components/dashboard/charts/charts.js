@@ -10,9 +10,3 @@ export default function Chart( props ) {
         </section>
     )
   }
-
-  export const getStaticProps = async () => {
-    const res = await fetch(`https://api.deezer.com/chart`);
-    const data = await res.json();
-    return { props: { data } }
-  }

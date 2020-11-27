@@ -14,6 +14,12 @@ After lots of consideration, it looks like I'll be using [Deezer](https://www.de
 
 ### The Firebolt Journey/Journal
 
+
+#### 11/25/2020 - 11/27/2020
+
+Worked on the custom page signin styling and found that getStaticProps can't work on components, it only works on pages. Also started working on integrating fontawesome for icons within the dashboard, this [article](https://dev.to/vuongddang/how-to-use-fontawesome-in-next-js-5bl5) might be able to help.
+
+
 #### 11/24/2020
 
 Found out in a [closed issue](https://github.com/nextauthjs/next-auth/issues/350) that for custom sign in pages using Next-Auth that you need to manually add-in a callbackurl otherwise it will just redirect back into the signin page rather than the callbackurl. The Next-Auth portion of this app is basically complete will need to style the custom signin page and begin working on the dashboard. 

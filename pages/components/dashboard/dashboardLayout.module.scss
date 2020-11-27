@@ -1,0 +1,17 @@
+// Sass Variables
+$dashboardGray: #151620;
+$gray: #2B2D42;
+$lightGray: #8D99AE;
+$offWhite: #EDF2F4;
+$lightRed: #EF233C;
+$red: #D90429;
+$black: #000;
+$headerFont: 'Rubik', sans-serif;
+$bodyFont: 'Lato', sans-serif;
+
+.dashboardWrapper {
+    background-color: $dashboardGray;
+    width: 90vw;
+    height: 80vh;
+    border-radius: 2rem;
+}

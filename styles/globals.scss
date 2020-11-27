@@ -11,6 +11,8 @@ $headerFont: 'Rubik', sans-serif;
 $bodyFont: 'Lato', sans-serif;
 
 html,
+section,
+main,
 body {
   padding: 0;
   margin: 0;
@@ -25,6 +27,20 @@ h5,
 h6 {
   font-family: $headerFont;
   font-style: italic;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div,
+a {
+  padding: 0;
+  margin: 0
 }
 
 a {

@@ -24,7 +24,7 @@ export default function Dashboard(props) {
 
     return (
       <Layout>
-        
+
           <DashboardLayout>
           {console.log(props.chart.tracks.data.[0].title_short)}
           </DashboardLayout>
