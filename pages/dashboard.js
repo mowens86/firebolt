@@ -26,7 +26,7 @@ export default function Dashboard(props) {
       <Layout>
 
           <DashboardLayout>
-          {console.log(props.chart.tracks.data.[0].title_short)}
+          {console.log(props.chart.tracks.data)}
           </DashboardLayout>
 
       </Layout>

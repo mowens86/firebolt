@@ -5,7 +5,11 @@ export default function Chart( props ) {
 
     return (
         <section>
-            <p>Some info: {props.data}</p>
+            <div className={styles.chartsWrapper}>
+                <div className={styles.chartsContent}>
+                    
+                </div>
+            </div>
             
         </section>
     )
