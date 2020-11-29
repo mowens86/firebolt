@@ -10,8 +10,8 @@ export default function DashboardLayout () {
     return (
         <section className={styles.dashboardWrapper}>
             <Navigation />
-            {/* <Search />
-            <Charts /> */}
+            {/* <Search /> */}
+            <Charts />
         </section>
     );
   }
