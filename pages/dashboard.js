@@ -7,6 +7,7 @@ import { signIn, useSession } from 'next-auth/client';
 
 export default function Dashboard(props) {
   const [session, loading] = useSession();
+  
 
   if (!session) {
     return (
@@ -24,10 +25,12 @@ export default function Dashboard(props) {
 
     return (
       <Layout>
-
-          <DashboardLayout>
-          {console.log(props.chart.tracks.data)}
-          </DashboardLayout>
+          {console.log(props.chart.tracks.data.[0])}
+          <DashboardLayout 
+            trackimage={props.chart.tracks.data.[0].album.cover_small}
+            trackname={props.chart.tracks.data.[0].title_short}
+            trackartist={props.chart.tracks.data.[0].artist.name}/>
+          
 
       </Layout>
     );

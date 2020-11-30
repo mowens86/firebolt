@@ -1,17 +1,18 @@
 import React from 'react';
 import Navigation from './navigation/navigation';
-import Search from './searchbar/searchbar';
 import Charts from './charts/charts';
 import styles from './dashboardLayout.module.scss';
 // import { getSession } from 'next-auth/client';
 
-export default function DashboardLayout () {
+export default function DashboardLayout (props) {
 
     return (
         <section className={styles.dashboardWrapper}>
             <Navigation />
-            {/* <Search /> */}
-            <Charts />
+            <Charts 
+                trackimage={props.trackimage}
+                trackname={props.trackname}
+                trackartist={props.trackartist}/>
         </section>
     );
   }

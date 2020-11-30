@@ -8,11 +8,11 @@ export default function Chart( props ) {
             <h2>Weekly Top Tracks</h2>
             <div className={styles.chartsWrapper}>
                 <figure className={styles.chartsFigure}>
-                    <img />
+                    <img src={props.trackimage}/>
                     <div>
                         <figcaption>
-                            <h3>Info</h3>
-                            <p>Small info</p>
+                            <h3>{props.trackname}</h3>
+                            <p>{props.trackartist}</p>
                         </figcaption>
                     </div>
 
