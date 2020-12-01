@@ -14,6 +14,9 @@ After lots of consideration, it looks like I'll be using [Deezer](https://www.de
 
 ### The Firebolt Journey/Journal
 
+#### 11/30/2020
+
+Worked on the styling of the navbar in the dashboard page. But mainly focused on figuring out a way to map the charts component based on the array received from the Deezer Api. May have to also create a music player that way there won't be individual ones. Found that the standard audio with controls doesn't give a whole lot of styling options.
 
 #### 11/25/2020 - 11/27/2020
 

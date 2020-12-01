@@ -43,10 +43,10 @@ export default function Dashboard(props) {
                 
                 // trackimage={() => this.mappedCharts}
 
-                trackimage={props.chart.tracks.data.[9].album.cover_medium}
-                trackname={props.chart.tracks.data.[9].title_short}
-                trackartist={props.chart.tracks.data.[9].artist.name}
-                trackpreview={props.chart.tracks.data.[9].preview}
+                trackimage={props.chart.tracks.data.[3].album.cover_medium}
+                trackname={props.chart.tracks.data.[3].title_short}
+                trackartist={props.chart.tracks.data.[3].artist.name}
+                trackpreview={props.chart.tracks.data.[3].preview}
                 />
           </DashboardLayout>
       </Layout>
