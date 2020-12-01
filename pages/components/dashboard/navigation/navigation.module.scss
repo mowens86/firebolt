@@ -65,9 +65,9 @@ $bodyFont: 'Lato', sans-serif;
     display: block;
     margin: .75rem 0;
     color: $offWhite;  
-    transition: all .15s ease-in-out;  
 }
 
 .link:hover {
-    color: $red;
+    color: $lightRed;
+    border-bottom: 2px solid $lightRed;
 }

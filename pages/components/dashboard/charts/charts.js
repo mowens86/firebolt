@@ -1,5 +1,5 @@
 import styles from './charts.module.scss';
-import React, { useState } from 'react';
+import React from 'react';
 
 export default function Chart( props ) {
 
@@ -8,11 +8,14 @@ export default function Chart( props ) {
             <h2>Weekly Top Tracks</h2>
             <div className={styles.chartsWrapper}>
                 <figure className={styles.chartsFigure}>
-                    <img src={props.trackimage}/>
+                    <img className={styles.chartsImage} src={props.trackimage}/>
                     <div>
-                        <figcaption>
+                        <figcaption className={styles.figContent}>
                             <h3>{props.trackname}</h3>
                             <p>{props.trackartist}</p>
+                            <audio controls>
+                                <source src={props.trackpreview} type="audio/mpeg"/>
+                            </audio>
                         </figcaption>
                     </div>
 

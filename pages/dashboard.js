@@ -1,12 +1,21 @@
 import React from 'react';
 import Layout from './components/layout/layout';
 import DashboardLayout from './components/dashboard/dashboardLayout';
+import Navigation from './components/dashboard/navigation/navigation';
+import Charts from './components/dashboard/charts/charts';
 import styles from '../styles/Home.module.scss';
 import { signIn, useSession } from 'next-auth/client';
 // import { getSession } from 'next-auth/client';
 
 export default function Dashboard(props) {
   const [session, loading] = useSession();
+
+  
+
+  const mappedCharts = () => {
+    let images = props.chart.tracks.data.map( image => image.album.cover_medium);
+    return images;
+  };
   
 
   if (!session) {
@@ -23,18 +32,28 @@ export default function Dashboard(props) {
     );
   }
 
+  if (session) {
     return (
-      <Layout>
-          {console.log(props.chart.tracks.data.[0])}
-          <DashboardLayout 
-            trackimage={props.chart.tracks.data.[0].album.cover_small}
-            trackname={props.chart.tracks.data.[0].title_short}
-            trackartist={props.chart.tracks.data.[0].artist.name}/>
-          
 
+      <Layout>
+          {console.log(props.chart.tracks.data)}
+          <DashboardLayout>
+            <Navigation />
+            <Charts 
+                
+                // trackimage={() => this.mappedCharts}
+
+                trackimage={props.chart.tracks.data.[9].album.cover_medium}
+                trackname={props.chart.tracks.data.[9].title_short}
+                trackartist={props.chart.tracks.data.[9].artist.name}
+                trackpreview={props.chart.tracks.data.[9].preview}
+                />
+          </DashboardLayout>
       </Layout>
     );
-  }
+
+  }  
+}
 
   export const getStaticProps = async () => {
     const res = await fetch(`https://api.deezer.com/chart`);

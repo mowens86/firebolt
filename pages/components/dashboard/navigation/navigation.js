@@ -16,7 +16,7 @@ export default function Navigation () {
             </div>
             <nav className={styles.navigation}>
                 <Link href="/dashboard">
-                    <a className={styles.link}>Dashboard</a>
+                    <a className={styles.link}>Home</a>
                 </Link>
             </nav>
         </section>

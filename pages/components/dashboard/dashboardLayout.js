@@ -8,11 +8,7 @@ export default function DashboardLayout (props) {
 
     return (
         <section className={styles.dashboardWrapper}>
-            <Navigation />
-            <Charts 
-                trackimage={props.trackimage}
-                trackname={props.trackname}
-                trackartist={props.trackartist}/>
+            {props.children}
         </section>
     );
   }

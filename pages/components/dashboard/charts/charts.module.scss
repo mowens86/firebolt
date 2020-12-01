@@ -11,15 +11,30 @@ $headerFont: 'Rubik', sans-serif;
 $bodyFont: 'Lato', sans-serif;
 
 
+.chartsSection,
+.chartsWrapper,
+.chartsFigure {
+    box-sizing: border-box;
+}
+
 .chartsSection {
     color:$offWhite;
     padding: 3rem 2rem;
 }
 
-.chartsFigure {
-    // border: 1px solid $lightGray;
+.chartsWrapper {
+    padding: 1rem 0;
+}
+
+.chartsFigure,
+.chartsImage {
     border-top-right-radius: 30px;
     border-bottom-left-radius: 30px;
+}
+
+.chartsFigure {
+    // border: 1px solid $lightGray;
+    width: 200px;
     padding: 1rem;
     margin: 0;
     text-align: center;
@@ -28,4 +43,21 @@ $bodyFont: 'Lato', sans-serif;
 
 .chartsFigure:hover {
     background-color: #20212e;
+}
+
+.chartsImage {
+    width: 80%;
+}
+
+.figContent h3,
+.figContent p {
+    padding-top: .35rem
+}
+
+.figContent audio {
+    width: 100%;
+    height: 2rem;
+    margin-top: .5rem;
+    border-radius: 50px;
+    border: 2px solid $offWhite;
 }
