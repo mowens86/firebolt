@@ -3,14 +3,12 @@ import React, { ReactElement } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { faBroadcastTower } from '@fortawesome/free-solid-svg-icons';
+import { faHeadphones } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faTable } from '@fortawesome/free-solid-svg-icons';
 import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import styles from './navigation.module.scss';
 // import { getSession } from 'next-auth/client';
-
-const home = <FontAwesomeIcon icon={faHome} />;
 
 export default function Navigation () {
 
@@ -26,31 +24,31 @@ export default function Navigation () {
                 
                 <div className={styles.linkWrapper}>
                     <Link href="/dashboard">
-                        <a className={styles.link}><FontAwesomeIcon icon={faHome} /> Home</a>
+                        <a className={styles.link}><FontAwesomeIcon icon={faHome} size="xs" /> <span className={styles.linkSpan}>Home</span></a>
                     </Link>
                 
                     <Link href="/dashboard">
-                        <a className={styles.link}><FontAwesomeIcon icon={faSearch} /> Search</a>
+                        <a className={styles.link}><FontAwesomeIcon icon={faSearch} size="xs" /> <span className={styles.linkSpan}>Search</span></a>
                     </Link>
 
                     <Link href="/dashboard">
-                        <a className={styles.link}><FontAwesomeIcon icon={faTable} /> Genre</a>
+                        <a className={styles.link}><FontAwesomeIcon icon={faTable} size="xs" /> <span className={styles.linkSpan}>Genre</span></a>
                     </Link>
                     </div>
                 
                 <div className={styles.linkWrapper}>
                     <Link href="/dashboard">
-                        <a className={styles.link}><FontAwesomeIcon icon={faBroadcastTower} /> Radio</a>
+                        <a className={styles.link}><FontAwesomeIcon icon={faHeadphones} size="xs" /> <span className={styles.linkSpan}>Radio</span></a>
                     </Link>
 
                     <Link href="/dashboard">
-                        <a className={styles.link}><FontAwesomeIcon icon={faMicrophone} /> Podcast</a>
+                        <a className={styles.link}><FontAwesomeIcon icon={faMicrophone} size="small" /> <span className={styles.linkSpan}>Podcast</span></a>
                     </Link>
                 </div>
 
                 <div className={styles.linkWrapper}>
                     <Link href="/dashboard">
-                        <a className={styles.link}><FontAwesomeIcon icon={faHeart} /> Favorites</a>
+                        <a className={styles.link}><FontAwesomeIcon icon={faHeart} size="xs" /> <span className={styles.linkSpan}>Favorites</span></a>
                     </Link>
                 </div>
 
