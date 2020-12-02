@@ -61,6 +61,10 @@ $bodyFont: 'Lato', sans-serif;
     flex-flow: column;
 }
 
+.linkWrapper {
+  margin-top: 1rem;
+}
+
 .link::before {
   content: "";
   position: absolute;
@@ -71,14 +75,14 @@ $bodyFont: 'Lato', sans-serif;
   background-color: $lightRed;
   visibility: hidden;
   transform: scaleX(0);
-  transition: all 0.15s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
 }
 
 .link {
     position: relative;
     display: block;
     text-decoration: none;
-    margin: .75rem 0;
+    margin-top: .5rem;
     padding-bottom: .5rem;
     color: $lightGray;  
 }
