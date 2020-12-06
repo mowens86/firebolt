@@ -14,6 +14,10 @@ After lots of consideration, it looks like I'll be using [Deezer](https://www.de
 
 ### The Firebolt Journey/Journal
 
+#### 12/6/2020
+
+Finally added in a mapped out component of the top tracks and started working on the layout of this component. Additionally, added in a hero image and added a signout button. Will have to adjust the image to be a background image and work the signout button to be layered over the background image.
+
 #### 12/5/2020
 
 Figured out a way to map through a component. I feel like I should have known this but it was a big stuck I atleast have gotten it started but will need to adjust the component itself to fit within the dashboard. 
