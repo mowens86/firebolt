@@ -10,16 +10,9 @@ $black: #000;
 $headerFont: 'Rubik', sans-serif;
 $bodyFont: 'Lato', sans-serif;
 
-
-.chartsSection,
 .chartsWrapper,
 .chartsFigure {
     box-sizing: border-box;
-}
-
-.chartsSection {
-    color:$offWhite;
-    padding: 3rem 2rem;
 }
 
 .chartsWrapper {
@@ -39,17 +32,20 @@ $bodyFont: 'Lato', sans-serif;
     margin: 0;
     text-align: center;
     transition: all 0.15s ease-in-out;
+    border: 2px solid $dashboardGray;
 }
 
 .chartsFigure:hover {
     background-color: #20212e;
+    transform: scale(1.02);
+    border-bottom: 2px solid $red;
 }
 
 .chartsImage {
     width: 80%;
 }
 
-.figContent h3,
+.figContent h4,
 .figContent p {
     padding-top: .35rem
 }

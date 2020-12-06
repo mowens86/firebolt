@@ -14,6 +14,10 @@ After lots of consideration, it looks like I'll be using [Deezer](https://www.de
 
 ### The Firebolt Journey/Journal
 
+#### 12/5/2020
+
+Figured out a way to map through a component. I feel like I should have known this but it was a big stuck I atleast have gotten it started but will need to adjust the component itself to fit within the dashboard. 
+
 #### 12/1/2020
 
 Added styling and fontawesome icons to the navigation bar. Will have to come backaround to finish it when other components/links are created.

@@ -9,12 +9,18 @@ $black: #000;
 $headerFont: 'Rubik', sans-serif;
 $bodyFont: 'Lato', sans-serif;
 
-.dashboardWrapper {
-    background-color: $dashboardGray;
-    width: 90vw;
-    max-width: 1285px;
-    height: 80vh;
-    border-radius: 2rem;
+
+.chartsSection {
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+.chartsSection {
+    color:$offWhite;
+    padding: 3rem 2rem;
+}
+
+.chartsFlexContainer {
     display: flex;
-    overflow: hidden;
+    flex-flow: wrap;
 }

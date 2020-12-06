@@ -10,12 +10,12 @@ $headerFont: 'Rubik', sans-serif;
 $bodyFont: 'Lato', sans-serif;
 
 .navigationWrapper {
-    height: 100%;
-    width: 200px;
+    min-height: 100%;
+    min-width: 200px;
     z-index: 1;
     top: 0;
     left: 0;
-    overflow-x: hidden;
+    position: relative;
     padding: 2rem 1.5rem;
     border-right: 1px solid $lightGray;
 }

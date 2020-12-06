@@ -2,30 +2,38 @@ import React from 'react';
 import Layout from './components/layout/layout';
 import DashboardLayout from './components/dashboard/dashboardLayout';
 import Navigation from './components/dashboard/navigation/navigation';
+import MainContainer from './components/dashboard/containers/mainContainer/mainContainer';
+import DashboardHero from './components/dashboard/hero/hero';
+import ChartsContainer from './components/dashboard/containers/chartsContainer/chartsContainer';
 import Charts from './components/dashboard/charts/charts';
 import styles from '../styles/Home.module.scss';
 import { signIn, useSession } from 'next-auth/client';
-import Chart from './components/dashboard/charts/charts';
+
 // import { getSession } from 'next-auth/client';
 
 export default function Dashboard(props) {
   const [session, loading] = useSession();
 
-  
-
-  const mappedImages = () => {
-    let images = props.chart.tracks.data.map( image => image.album.cover_medium);
-    return images;
+  const capitalizeFirstLetter = (str) => {
+    if(str.length > 15) str = str.substring(0,15) + '...';
+    return str
+      .toLowerCase()
+      .split(' ')
+      .map(function(word) {
+          return word[0].toUpperCase() + word.substr(1);
+    })
+    .join(' ');
   };
 
-  const musicItems = props.chart.tracks.data.map((track) => {
-    // console.log(track);
+  const topTracks = props.chart.tracks.data.map((track) => {
     return <Charts 
-    trackimage={track.album.cover_medium}
-    trackname={track.title_short}
-    trackartist={track.artist.name}
-    trackpreview={track.preview}
-    />
+              key={track.id}
+              trackimage={track.album.cover_medium}
+              tracknamelong={track.title_short}
+              trackname={capitalizeFirstLetter(track.title_short)}
+              trackartist={capitalizeFirstLetter(track.artist.name)}
+              trackpreview={track.preview}
+            />
   });
 
   if (!session) {
@@ -49,16 +57,12 @@ export default function Dashboard(props) {
           {/* {console.log(props.chart.tracks.data)} */}
           <DashboardLayout>
             <Navigation />
-            {musicItems}
-            {/* <Charts 
-                
-                
-
-                trackimage={props.chart.tracks.data.[9].album.cover_medium}
-                trackname={props.chart.tracks.data.[9].title_short}
-                trackartist={props.chart.tracks.data.[9].artist.name}
-                trackpreview={props.chart.tracks.data.[9].preview}
-                /> */}
+            <MainContainer>
+              <DashboardHero />
+              <ChartsContainer>
+                {topTracks}
+              </ChartsContainer>
+            </MainContainer>
           </DashboardLayout>
       </Layout>
     );

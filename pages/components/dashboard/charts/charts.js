@@ -4,14 +4,16 @@ import React from 'react';
 export default function Chart( props ) {
 
     return (
-        <section className={styles.chartsSection}>
-            <h2>Weekly Top Tracks</h2>
             <div className={styles.chartsWrapper}>
                 <figure className={styles.chartsFigure}>
-                    <img className={styles.chartsImage} src={props.trackimage}/>
+                    <img 
+                        className={styles.chartsImage} 
+                        src={props.trackimage} 
+                        alt={props.trackname} 
+                        title={props.tracknamelong}/>
                     <div>
                         <figcaption className={styles.figContent}>
-                            <h3>{props.trackname}</h3>
+                            <h4>{props.trackname}</h4>
                             <p>{props.trackartist}</p>
                             <audio controls>
                                 <source src={props.trackpreview} type="audio/mpeg"/>
@@ -21,7 +23,5 @@ export default function Chart( props ) {
 
                 </figure>
             </div>
-            
-        </section>
     )
   }
