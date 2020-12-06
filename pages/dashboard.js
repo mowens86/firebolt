@@ -5,6 +5,7 @@ import Navigation from './components/dashboard/navigation/navigation';
 import Charts from './components/dashboard/charts/charts';
 import styles from '../styles/Home.module.scss';
 import { signIn, useSession } from 'next-auth/client';
+import Chart from './components/dashboard/charts/charts';
 // import { getSession } from 'next-auth/client';
 
 export default function Dashboard(props) {
@@ -12,11 +13,20 @@ export default function Dashboard(props) {
 
   
 
-  const mappedCharts = () => {
+  const mappedImages = () => {
     let images = props.chart.tracks.data.map( image => image.album.cover_medium);
     return images;
   };
-  
+
+  const musicItems = props.chart.tracks.data.map((track) => {
+    // console.log(track);
+    return <Charts 
+    trackimage={track.album.cover_medium}
+    trackname={track.title_short}
+    trackartist={track.artist.name}
+    trackpreview={track.preview}
+    />
+  });
 
   if (!session) {
     return (
@@ -36,18 +46,19 @@ export default function Dashboard(props) {
     return (
 
       <Layout>
-          {console.log(props.chart.tracks.data)}
+          {/* {console.log(props.chart.tracks.data)} */}
           <DashboardLayout>
             <Navigation />
-            <Charts 
+            {musicItems}
+            {/* <Charts 
                 
-                // trackimage={() => this.mappedCharts}
+                
 
-                trackimage={props.chart.tracks.data.[7].album.cover_medium}
-                trackname={props.chart.tracks.data.[7].title_short}
-                trackartist={props.chart.tracks.data.[7].artist.name}
-                trackpreview={props.chart.tracks.data.[7].preview}
-                />
+                trackimage={props.chart.tracks.data.[9].album.cover_medium}
+                trackname={props.chart.tracks.data.[9].title_short}
+                trackartist={props.chart.tracks.data.[9].artist.name}
+                trackpreview={props.chart.tracks.data.[9].preview}
+                /> */}
           </DashboardLayout>
       </Layout>
     );

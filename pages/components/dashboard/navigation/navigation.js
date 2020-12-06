@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -42,7 +42,7 @@ export default function Navigation () {
                     </Link>
 
                     <Link href="/dashboard">
-                        <a className={styles.link}><FontAwesomeIcon icon={faMicrophone} size="small" /> <span className={styles.linkSpan}>Podcast</span></a>
+                        <a className={styles.link}><FontAwesomeIcon icon={faMicrophone} size="sm" /> <span className={styles.linkSpan}>Podcast</span></a>
                     </Link>
                 </div>
 
