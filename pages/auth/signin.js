@@ -17,7 +17,6 @@ export default function SignIn({ providers }) {
         
           {Object.values(providers).map(provider => (
 
-
               <div 
                   className={styles.linkWrapper} 
                   key={provider.name}>

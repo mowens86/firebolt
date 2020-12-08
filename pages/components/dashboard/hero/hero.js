@@ -6,10 +6,9 @@ export default function DashboardHero () {
 
     return (
         <section>
-            <div>
-                <img className={styles.DashboardHero} src="/dashboardhero.jpg" />
-                <div className={styles.signOutWrapper}>
-                <a className={styles.signOut} onClick={signOut}>Sign Out</a>
+            <div className={styles.DashboardHero}>
+                <div className={styles.linkWrapper}>
+                    <a className={styles.link} onClick={() => signOut({ callbackUrl: 'http://localhost:3000/' })}>Sign Out</a>
               </div>
             </div>
 

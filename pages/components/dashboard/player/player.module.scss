@@ -1,0 +1,19 @@
+// Sass Variables
+$dashboardGray: #151620;
+$gray: #2B2D42;
+$lightGray: #8D99AE;
+$offWhite: #EDF2F4;
+$lightRed: #EF233C;
+$red: #D90429;
+$black: #000;
+$headerFont: 'Rubik', sans-serif;
+$bodyFont: 'Lato', sans-serif;
+
+.Player {
+    width: 100%;
+    height: 90px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    border-radius: 1rem;
+    background-color: $dashboardGray;
+}

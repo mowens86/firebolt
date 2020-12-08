@@ -10,11 +10,6 @@ $black: #000;
 $headerFont: 'Rubik', sans-serif;
 $bodyFont: 'Lato', sans-serif;
 
-.chartsWrapper,
-.chartsFigure {
-    box-sizing: border-box;
-}
-
 .chartsWrapper {
     padding: 1rem 0;
 }
@@ -33,6 +28,7 @@ $bodyFont: 'Lato', sans-serif;
     text-align: center;
     transition: all 0.15s ease-in-out;
     border: 2px solid $dashboardGray;
+    cursor: pointer;
 }
 
 .chartsFigure:hover {

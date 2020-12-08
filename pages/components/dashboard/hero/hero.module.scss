@@ -1,10 +1,46 @@
+// Sass Variables
+$dashboardGray: #151620;
+$gray: #2B2D42;
+$lightGray: #8D99AE;
+$offWhite: #EDF2F4;
+$lightRed: #EF233C;
+$red: #D90429;
+$black: #000;
+$headerFont: 'Rubik', sans-serif;
+$bodyFont: 'Lato', sans-serif;
+
 .DashboardHero {
     width: 100%;
+    background-image: url('/dashboardhero.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 350px;
     overflow: hidden;
 }
 
-.signOutWrapper {
-    top: 0;
-    right: 0;
-    position: relative;
-}
+.linkWrapper {
+    margin-left: auto;
+    margin-right: 2rem;
+    text-align: center;
+    cursor: pointer;
+    width: 100px;
+    .link {
+      background-color: $lightRed;
+      font-family: $headerFont;
+      display: block;
+      padding: .5rem 1rem;
+      border: 1px solid $offWhite;
+      border-radius: 10px;
+      color: $offWhite;
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 1rem;
+      transition: .2s all ease-in-out;
+    }
+    .link:hover {
+      background-color: $black;
+      color: $lightRed;
+    }
+  }

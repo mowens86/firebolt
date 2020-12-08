@@ -15,6 +15,31 @@ $bodyFont: 'Lato', sans-serif;
     overflow-y: scroll;
 }
 
+.chartsSection::-webkit-scrollbar {
+    width: 10px;
+  }
+
+/* Track */
+.chartsSection::-webkit-scrollbar-track {
+background: $black; 
+}
+
+/* Handle */
+.chartsSection::-webkit-scrollbar-thumb {
+background: $lightGray;
+border-radius: 10px;
+}
+
+/* Handle on hover */
+.chartsSection::-webkit-scrollbar-thumb:hover {
+background: #555;
+}
+
+.chartsSection,
+.chartsFigure {
+    box-sizing: border-box;
+}
+
 .chartsSection {
     color:$offWhite;
     padding: 3rem 2rem;

@@ -13,14 +13,14 @@ const options = {
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET
     }),
-    Providers.Facebook({
-      clientId: process.env.FACEBOOK_CLIENT_ID,
-      clientSecret: process.env.FACEBOOK_CLIENT_SECRET
-    }),
-    Providers.Twitter({
-      clientId: process.env.TWITTER_CLIENT_ID,
-      clientSecret: process.env.TWITTER_CLIENT_SECRET
-    }),
+    // Providers.Facebook({
+    //   clientId: process.env.FACEBOOK_CLIENT_ID,
+    //   clientSecret: process.env.FACEBOOK_CLIENT_SECRET
+    // }),
+    // Providers.Twitter({
+    //   clientId: process.env.TWITTER_CLIENT_ID,
+    //   clientSecret: process.env.TWITTER_CLIENT_SECRET
+    // }),
     // Providers.GitHub({
     //   clientId: process.env.GITHUB_ID,
     //   clientSecret: process.env.GITHUB_SECRET
@@ -34,9 +34,9 @@ const options = {
     //   name: 'Deezer',
     //   type: 'oauth',
     //   version: '2.0',
-    //   scope: `basic_access-email`,
+    //   scope: `basic_access,email`,
     //   params: { grant_type: 'authorization_code' },
-    //   accessTokenUrl: `https://connect.deezer.com/oauth/access_token.php`,
+    //   accessTokenUrl: `https://connect.deezer.com/oauth/access_token.php?`,
     //   authorizationUrl: `https://connect.deezer.com/oauth/auth.php?response_type=token`,
     //   profileUrl: `https://api.deezer.com/user/me`,
     //   profile: (profile) => {

@@ -6,13 +6,23 @@ After lots of consideration, it looks like I'll be using [Deezer](https://www.de
 
 ### Functionality wants/needs
 - oAuth Login
-- Create Playlist
+- Weekly Top Tracks
 - Favorites
 - Search Bar
+- Radio
+- Podcast
 - Music Player
 - Mobile Responsiveness (how in the world will this look on mobile o.0)
 
 ### The Firebolt Journey/Journal
+
+#### 12/7/2020
+
+Adjusted the hero image in dashboard to be a background image and set the signout button in the top right corner. Also added in an embedded Deezer music player, this might save me some time from having to build one out entirely which initself would have been a project. But we'll see if I may need to down the road.
+
+I am currently trying to get the Deezer music player to take the id's of the weekly tracks. Currently I can get the ids of the tracks to show when I click on weekly tracks in console.log which is what I need to pass into the music player to play it but I am stuck on how I can pass information from the charts component to the music player component. 
+
+Since they're both children components I am not sure if I can pass the id I need between one another. I may have to adjust the charts to be a parent component of the music player component. I will need to do more research.
 
 #### 12/6/2020
 

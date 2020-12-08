@@ -9,32 +9,12 @@ import Charts from './components/dashboard/charts/charts';
 import styles from '../styles/Home.module.scss';
 import { signIn, useSession } from 'next-auth/client';
 
+import MusicPlayer from './components/dashboard/player/player';
+
 // import { getSession } from 'next-auth/client';
 
 export default function Dashboard(props) {
   const [session, loading] = useSession();
-
-  const capitalizeFirstLetter = (str) => {
-    if(str.length > 15) str = str.substring(0,15) + '...';
-    return str
-      .toLowerCase()
-      .split(' ')
-      .map(function(word) {
-          return word[0].toUpperCase() + word.substr(1);
-    })
-    .join(' ');
-  };
-
-  const topTracks = props.chart.tracks.data.map((track) => {
-    return <Charts 
-              key={track.id}
-              trackimage={track.album.cover_medium}
-              tracknamelong={track.title_short}
-              trackname={capitalizeFirstLetter(track.title_short)}
-              trackartist={capitalizeFirstLetter(track.artist.name)}
-              trackpreview={track.preview}
-            />
-  });
 
   if (!session) {
     return (
@@ -51,10 +31,30 @@ export default function Dashboard(props) {
   }
 
   if (session) {
+
+    const topTracks = props.chart.tracks.data.map((track) => {
+      return <Charts 
+                key={track.id}
+                trackid={track.id}
+                trackimage={track.album.cover_medium}
+                tracknamelong={track.title_short}
+                trackname={track.title_short}
+                trackartist={track.artist.name}
+                trackpreview={track.preview}
+              />
+    });
+  
+    const getTrackId = (e) => {
+      const element = e.target || e.srcElement;
+      return element.id;
+    };
+
+    // console.log(topTracks);
+
     return (
 
       <Layout>
-          {/* {console.log(props.chart.tracks.data)} */}
+          {/* {console.log(topTracks.[0].props.trackid)} */}
           <DashboardLayout>
             <Navigation />
             <MainContainer>
@@ -62,6 +62,7 @@ export default function Dashboard(props) {
               <ChartsContainer>
                 {topTracks}
               </ChartsContainer>
+              <MusicPlayer musictrack={topTracks.[0].props.trackid} />
             </MainContainer>
           </DashboardLayout>
       </Layout>
