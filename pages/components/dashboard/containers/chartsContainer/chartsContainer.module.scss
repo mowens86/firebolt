@@ -11,8 +11,14 @@ $bodyFont: 'Lato', sans-serif;
 
 
 .chartsSection {
+    color:$offWhite;
+    padding: 3rem 2rem;
     box-sizing: border-box;
     overflow-y: scroll;
+}
+
+.chartsSection h2 {
+    padding: 1rem 0;
 }
 
 .chartsSection::-webkit-scrollbar {
@@ -38,11 +44,6 @@ background: #555;
 .chartsSection,
 .chartsFigure {
     box-sizing: border-box;
-}
-
-.chartsSection {
-    color:$offWhite;
-    padding: 3rem 2rem;
 }
 
 .chartsFlexContainer {

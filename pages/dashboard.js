@@ -43,13 +43,21 @@ export default function Dashboard(props) {
                 trackpreview={track.preview}
               />
     });
-  
-    const getTrackId = (e) => {
-      const element = e.target || e.srcElement;
-      return element.id;
-    };
 
-    // console.log(topTracks);
+    let selectedTrack = topTracks.[0].props.trackid;
+
+    // Gather figures holding track ids
+    let figuresCollection = document.getElementsByTagName("Figure");
+    // Convert HTMLcollection to an array
+    figuresCollection = [...figuresCollection];
+    // Add event listener to each figure
+    figuresCollection.forEach(figure => {
+      figure.addEventListener('click', function(event) {
+        event.preventDefault();
+        selectedTrack = parseInt(figure.id);
+        return selectedTrack && console.log(selectedTrack);
+      });
+    });
 
     return (
 
@@ -62,7 +70,7 @@ export default function Dashboard(props) {
               <ChartsContainer>
                 {topTracks}
               </ChartsContainer>
-              <MusicPlayer musictrack={topTracks.[0].props.trackid} />
+              <MusicPlayer musictrack={selectedTrack} />
             </MainContainer>
           </DashboardLayout>
       </Layout>

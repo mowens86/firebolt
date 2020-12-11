@@ -5,7 +5,7 @@ export default function Chart( props ) {
 
     return (
         <div className={styles.mainSection}>
-            {props.children} 
+            {props.children}
         </div>
     )
   }
