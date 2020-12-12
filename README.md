@@ -16,6 +16,16 @@ After lots of consideration, it looks like I'll be using [Deezer](https://www.de
 
 ### The Firebolt Journey/Journal
 
+#### 12/11/2020
+
+After a lot of toying with different things I found out that using setState was the solve to update the musicplayer with a new song and adding the id. Since setState works asynchronously it will update the component which is what I was needing. I also added a setState to keep the musicplayer from starting automatically when the page first loads and will automatically play for any song that is selected after.
+
+#### 12/10/2020
+
+Figured out how to get the id for each figure in the dashboard component by getting all of the figure elements as an HTMLcollection, converting them into and array, and using a forEach method to add an event listener to each of them to grab the id. 
+
+But, now the musicplayer won't update with the variable being used as the props to hold the id. Additionally the event listeners fire off more than once when clicking on a figure element that holds the id. 
+
 #### 12/7/2020
 
 Adjusted the hero image in dashboard to be a background image and set the signout button in the top right corner. Also added in an embedded Deezer music player, this might save me some time from having to build one out entirely which initself would have been a project. But we'll see if I may need to down the road.

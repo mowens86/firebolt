@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from './components/layout/layout';
 import DashboardLayout from './components/dashboard/dashboardLayout';
 import Navigation from './components/dashboard/navigation/navigation';
@@ -15,6 +15,7 @@ import MusicPlayer from './components/dashboard/player/player';
 
 export default function Dashboard(props) {
   const [session, loading] = useSession();
+  
 
   if (!session) {
     return (
@@ -45,24 +46,30 @@ export default function Dashboard(props) {
     });
 
     let selectedTrack = topTracks.[0].props.trackid;
+    const [track, setTrack] = useState(selectedTrack);
+    const [play, setPlay] = useState(false);
+
 
     // Gather figures holding track ids
-    let figuresCollection = document.getElementsByTagName("Figure");
+    let topTracksCollection = document.getElementsByTagName("Figure");
     // Convert HTMLcollection to an array
-    figuresCollection = [...figuresCollection];
-    // Add event listener to each figure
-    figuresCollection.forEach(figure => {
-      figure.addEventListener('click', function(event) {
-        event.preventDefault();
-        selectedTrack = parseInt(figure.id);
-        return selectedTrack && console.log(selectedTrack);
+    topTracksCollection = [...topTracksCollection];
+    // Loop through top tracks
+    topTracksCollection.forEach(track => {
+      // Add event listener to each figure
+      track.addEventListener('click', function() {
+        // Convert from string to integer
+        selectedTrack = parseInt(track.id);
+        // setState to updated track
+        setTrack(selectedTrack);
+        // setState autoplay on music player to true after selection, default is false on initial page load 
+        setPlay(true);
       });
     });
 
     return (
 
       <Layout>
-          {/* {console.log(topTracks.[0].props.trackid)} */}
           <DashboardLayout>
             <Navigation />
             <MainContainer>
@@ -70,7 +77,7 @@ export default function Dashboard(props) {
               <ChartsContainer>
                 {topTracks}
               </ChartsContainer>
-              <MusicPlayer musictrack={selectedTrack} />
+              <MusicPlayer musictrack={track} autoplay={play}/>
             </MainContainer>
           </DashboardLayout>
       </Layout>
