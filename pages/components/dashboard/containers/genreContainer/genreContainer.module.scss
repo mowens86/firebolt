@@ -1,0 +1,52 @@
+// Sass Variables
+$dashboardGray: #151620;
+$gray: #2B2D42;
+$lightGray: #8D99AE;
+$offWhite: #EDF2F4;
+$lightRed: #EF233C;
+$red: #D90429;
+$black: #000;
+$headerFont: 'Rubik', sans-serif;
+$bodyFont: 'Lato', sans-serif;
+
+
+.genreSection {
+    color:$offWhite;
+    padding: 3rem 2rem;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+.genreSection h2 {
+    padding: 1rem 0;
+}
+
+.genreSection::-webkit-scrollbar {
+    width: 10px;
+  }
+
+/* Track */
+.genreSection::-webkit-scrollbar-track {
+background: $black; 
+}
+
+/* Handle */
+.genreSection::-webkit-scrollbar-thumb {
+background: $lightGray;
+border-radius: 10px;
+}
+
+/* Handle on hover */
+.genreSection::-webkit-scrollbar-thumb:hover {
+background: #555;
+}
+
+.genreSection,
+.genreFigure {
+    box-sizing: border-box;
+}
+
+.genreFlexContainer {
+    display: flex;
+    flex-flow: wrap;
+}

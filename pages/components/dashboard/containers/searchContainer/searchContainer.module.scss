@@ -1,0 +1,52 @@
+// Sass Variables
+$dashboardGray: #151620;
+$gray: #2B2D42;
+$lightGray: #8D99AE;
+$offWhite: #EDF2F4;
+$lightRed: #EF233C;
+$red: #D90429;
+$black: #000;
+$headerFont: 'Rubik', sans-serif;
+$bodyFont: 'Lato', sans-serif;
+
+
+.searchSection {
+    color:$offWhite;
+    padding: 3rem 2rem;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+.searchSection h2 {
+    padding: 1rem 0;
+}
+
+.searchSection::-webkit-scrollbar {
+    width: 10px;
+  }
+
+/* Track */
+.searchSection::-webkit-scrollbar-track {
+background: $black; 
+}
+
+/* Handle */
+.searchSection::-webkit-scrollbar-thumb {
+background: $lightGray;
+border-radius: 10px;
+}
+
+/* Handle on hover */
+.searchSection::-webkit-scrollbar-thumb:hover {
+background: #555;
+}
+
+.searchSection,
+.searchFigure {
+    box-sizing: border-box;
+}
+
+.searchFlexContainer {
+    display: flex;
+    flex-flow: wrap;
+}

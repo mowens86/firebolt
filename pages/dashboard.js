@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Layout from './components/layout/layout';
 import DashboardLayout from './components/dashboard/dashboardLayout';
-import Navigation from './components/navigation/navigation';
+import Navigation from './components/dashboard/navigation/navigation';
 import MainContainer from './components/dashboard/containers/mainContainer/mainContainer';
 import DashboardHero from './components/dashboard/hero/hero';
 import ChartsContainer from './components/dashboard/containers/chartsContainer/chartsContainer';

@@ -14,11 +14,6 @@ export default function Chart( props ) {
         .join(' ');
       };
 
-      const getTrackId = () => {
-        return props.trackid && console.log(props.trackid);
-        // return props.trackid;
-      };
-
     return (
             <figure id={props.trackid} className={styles.chartsFigure}>
                 
@@ -31,10 +26,6 @@ export default function Chart( props ) {
                     <figcaption className={styles.figContent}>
                         <h4>{capitalizeFirstLetter(props.trackname)}</h4>
                         <p>{capitalizeFirstLetter(props.trackartist)}</p>
-                        {/* <audio controls>
-                            <source src={props.trackpreview} type="audio/mpeg"/>
-                        </audio> */}
-                        
                     </figcaption>
                 </div>
 

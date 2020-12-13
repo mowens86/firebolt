@@ -27,7 +27,7 @@ export default function Navigation () {
                         <a className={styles.link}><FontAwesomeIcon icon={faHome} size="xs" /> <span className={styles.linkSpan}>Home</span></a>
                     </Link>
                 
-                    <Link href="/dashboard">
+                    <Link href="/search">
                         <a className={styles.link}><FontAwesomeIcon icon={faSearch} size="xs" /> <span className={styles.linkSpan}>Search</span></a>
                     </Link>
 

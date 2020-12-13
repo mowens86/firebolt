@@ -3,9 +3,8 @@ import Layout from './components/layout/layout';
 import DashboardLayout from './components/dashboard/dashboardLayout';
 import Navigation from './components/dashboard/navigation/navigation';
 import MainContainer from './components/dashboard/containers/mainContainer/mainContainer';
-import DashboardHero from './components/dashboard/hero/hero';
-import GenreContainer from './components/dashboard/containers/genreContainer/genreContainer';
-import Genre from './components/dashboard/genre/genre';
+import SearchContainer from './components/dashboard/containers/searchContainer/searchContainer';
+import SearchBar from './components/dashboard/search/searchbar/searchbar';
 import styles from '../styles/Home.module.scss';
 import { signIn, useSession } from 'next-auth/client';
 
@@ -29,14 +28,14 @@ export default function Dashboard(props) {
 
   if (session) {
 
-    const genres = props.genre.data.map((genre) => {
-      return <Genre 
-                key={genre.id}
-                genreid={genre.id}
-                genreimage={genre.picture}
-                genrename={genre.name}
-      />
-    });
+    // const genres = props.genre.data.map((genre) => {
+    //   return <Genre 
+    //             key={genre.id}
+    //             genreid={genre.id}
+    //             genreimage={genre.picture}
+    //             genrename={genre.name}
+    //   />
+    // });
 
     return (
 
@@ -44,10 +43,9 @@ export default function Dashboard(props) {
           <DashboardLayout>
             <Navigation />
             <MainContainer>
-              <DashboardHero />
-              <GenreContainer>
-                {genres}
-              </GenreContainer>
+              <SearchContainer>
+                <SearchBar />
+              </SearchContainer>
             </MainContainer>
           </DashboardLayout>
       </Layout>
@@ -56,8 +54,8 @@ export default function Dashboard(props) {
   }  
 }
 
-  export const getStaticProps = async () => {
-    const res = await fetch(`https://api.deezer.com/genre`);
-    const genre = await res.json();
-    return { props: { genre } }
-  }
+//   export const getStaticProps = async () => {
+//     const res = await fetch(`https://api.deezer.com/genre`);
+//     const genre = await res.json();
+//     return { props: { genre } }
+//   }

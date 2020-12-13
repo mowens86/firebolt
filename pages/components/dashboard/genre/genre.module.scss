@@ -9,14 +9,13 @@ $black: #000;
 $headerFont: 'Rubik', sans-serif;
 $bodyFont: 'Lato', sans-serif;
 
-.chartsFigure,
-.chartsImage {
+.genreFigure,
+.genreImage {
     border-top-right-radius: 30px;
     border-bottom-left-radius: 30px;
 }
 
-.chartsFigure {
-    // border: 1px solid $lightGray;
+.genreFigure {
     width: 200px;
     padding: 1rem;
     margin: 0;
@@ -26,13 +25,13 @@ $bodyFont: 'Lato', sans-serif;
     cursor: pointer;
 }
 
-.chartsFigure:hover {
+.genreFigure:hover {
     background-color: #20212e;
     transform: scale(1.02);
     border-bottom: 2px solid $red;
 }
 
-.chartsImage {
+.genreImage {
     width: 80%;
 }
 
