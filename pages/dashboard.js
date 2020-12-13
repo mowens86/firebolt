@@ -1,21 +1,56 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from './components/layout/layout';
 import DashboardLayout from './components/dashboard/dashboardLayout';
-import Navigation from './components/dashboard/navigation/navigation';
+import Navigation from './components/navigation/navigation';
 import MainContainer from './components/dashboard/containers/mainContainer/mainContainer';
 import DashboardHero from './components/dashboard/hero/hero';
 import ChartsContainer from './components/dashboard/containers/chartsContainer/chartsContainer';
 import Charts from './components/dashboard/charts/charts';
+import MusicPlayer from './components/dashboard/player/player';
 import styles from '../styles/Home.module.scss';
 import { signIn, useSession } from 'next-auth/client';
-
-import MusicPlayer from './components/dashboard/player/player';
 
 // import { getSession } from 'next-auth/client';
 
 export default function Dashboard(props) {
   const [session, loading] = useSession();
+
+  // Map out top tracks from static props
+  const topTracks = props.chart.tracks.data.map((track) => {
+    return <Charts 
+              key={track.id}
+              trackid={track.id}
+              trackimage={track.album.cover_medium}
+              tracknamelong={track.title_short}
+              trackname={track.title_short}
+              trackartist={track.artist.name}
+              trackpreview={track.preview}
+            />
+  });
+
+  // Default top track
+  let selectedTrack = topTracks.[0].props.trackid;
+  const [track, setTrack] = useState(selectedTrack);
+  const [autoplay, setAutoplay] = useState(false);
   
+  useEffect(() => {
+        // Gather figures holding track ids
+        let topTracksCollection = document.getElementsByTagName("Figure");
+        // Convert HTMLcollection to an array
+        topTracksCollection = [...topTracksCollection];
+        // Loop through top tracks
+        topTracksCollection.forEach(track => {
+          // Add event listener to each figure
+          track.addEventListener('click', function() {
+            // Convert from string to integer
+            selectedTrack = parseInt(track.id);
+            // setState to updated track
+            setTrack(selectedTrack);
+            // setState autoplay on music player to true after selection, default is false on initial page load 
+            setAutoplay(true);
+          });
+        });
+  });
 
   if (!session) {
     return (
@@ -32,41 +67,6 @@ export default function Dashboard(props) {
   }
 
   if (session) {
-
-    const topTracks = props.chart.tracks.data.map((track) => {
-      return <Charts 
-                key={track.id}
-                trackid={track.id}
-                trackimage={track.album.cover_medium}
-                tracknamelong={track.title_short}
-                trackname={track.title_short}
-                trackartist={track.artist.name}
-                trackpreview={track.preview}
-              />
-    });
-
-    let selectedTrack = topTracks.[0].props.trackid;
-    const [track, setTrack] = useState(selectedTrack);
-    const [play, setPlay] = useState(false);
-
-
-    // Gather figures holding track ids
-    let topTracksCollection = document.getElementsByTagName("Figure");
-    // Convert HTMLcollection to an array
-    topTracksCollection = [...topTracksCollection];
-    // Loop through top tracks
-    topTracksCollection.forEach(track => {
-      // Add event listener to each figure
-      track.addEventListener('click', function() {
-        // Convert from string to integer
-        selectedTrack = parseInt(track.id);
-        // setState to updated track
-        setTrack(selectedTrack);
-        // setState autoplay on music player to true after selection, default is false on initial page load 
-        setPlay(true);
-      });
-    });
-
     return (
 
       <Layout>
@@ -77,7 +77,7 @@ export default function Dashboard(props) {
               <ChartsContainer>
                 {topTracks}
               </ChartsContainer>
-              <MusicPlayer musictrack={track} autoplay={play}/>
+              <MusicPlayer musictrack={track} autoplaysetting={autoplay}/>
             </MainContainer>
           </DashboardLayout>
       </Layout>

@@ -31,7 +31,7 @@ export default function Navigation () {
                         <a className={styles.link}><FontAwesomeIcon icon={faSearch} size="xs" /> <span className={styles.linkSpan}>Search</span></a>
                     </Link>
 
-                    <Link href="/dashboard">
+                    <Link href="/genre">
                         <a className={styles.link}><FontAwesomeIcon icon={faTable} size="xs" /> <span className={styles.linkSpan}>Genre</span></a>
                     </Link>
                     </div>
