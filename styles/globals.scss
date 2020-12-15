@@ -51,3 +51,8 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.Container {
+  display: flex;
+  flex-flow: wrap;
+}

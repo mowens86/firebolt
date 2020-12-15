@@ -8,7 +8,9 @@ export default function Chart( props ) {
                 <img 
                     className={styles.genreImage} 
                     src={props.genreimage}
-                    alt={props.genrename} />
+                    alt={props.genrename}
+                    width={135}
+                    height={135} />
                 <div>
                     <figcaption className={styles.figContent}>
                         <h4>{props.genrename}</h4>

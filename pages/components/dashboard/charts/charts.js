@@ -1,5 +1,6 @@
 import styles from './charts.module.scss';
 import React from 'react';
+import Image from 'next/image';
 
 export default function Chart( props ) {
     
@@ -21,7 +22,8 @@ export default function Chart( props ) {
                     className={styles.chartsImage} 
                     src={props.trackimage}
                     alt={props.trackname} 
-                    title={props.tracknamelong}/>
+                    title={props.tracknamelong}
+                    width={135} height={135}/>
                 <div>
                     <figcaption className={styles.figContent}>
                         <h4>{capitalizeFirstLetter(props.trackname)}</h4>
