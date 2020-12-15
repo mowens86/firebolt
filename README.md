@@ -16,6 +16,10 @@ After lots of consideration, it looks like I'll be using [Deezer](https://www.de
 
 ### The Firebolt Journey/Journal
 
+#### 12/14/2020
+
+Worked on the search bar and looked up some information on how to use hooks for one within React. It's definitely different from another project I did using PHP as a searchbar, but I think I learned a little about it. I also found an extension called Moesif Origins and CORS changer that can help with localhost CORS problems.
+
 #### 12/11/2020
 
 After a lot of toying with different things I found out that using setState was the solve to update the musicplayer with a new song and adding the id. Since setState works asynchronously it will update the component which is what I was needing. I also added a setState to keep the musicplayer from starting automatically when the page first loads and will automatically play for any song that is selected after.
