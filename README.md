@@ -16,9 +16,16 @@ After lots of consideration, it looks like I'll be using [Deezer](https://www.de
 
 ### The Firebolt Journey/Journal
 
+#### 12/15/2020
+
+Continued working on the searchbar and found an outstanding article on how to put something like this together while learning how to use hooks with React. Check it out [here](https://www.robinwieruch.de/react-hooks-fetch-data). 
+
+Although it doesn't look great the functionality for the search bar is there and there's even "loading" and "error" messaging included with this as it searches, all thanks to that article. All that's left is to the visual layout, which I'll continue to work on.
+
+
 #### 12/14/2020
 
-Worked on the search bar and looked up some information on how to use hooks for one within React. It's definitely different from another project I did using PHP as a searchbar, but I think I learned a little about it. I also found an extension called Moesif Origins and CORS changer that can help with localhost CORS problems.
+Worked on the search bar and looked up some information on how to use hooks for one within React. It's definitely different from another project I did using PHP as a searchbar, but I think I learned a little about it. I also found an extension called Moesif Origins and CORS changer that can help with localhost CORS problems if you use Chrome or Firefox.
 
 #### 12/11/2020
 
