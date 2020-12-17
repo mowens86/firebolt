@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import Layout from './components/layout/layout';
-import DashboardLayout from './components/dashboard/dashboardLayout';
-import Navigation from './components/dashboard/navigation/navigation';
-import MainContainer from './components/dashboard/containers/mainContainer/mainContainer';
-import DashboardHero from './components/dashboard/hero/hero';
-import GenreContainer from './components/dashboard/containers/genreContainer/genreContainer';
-import Genre from './components/dashboard/genre/genre';
+import Layout from './components/UI/layout/layout';
+import DashboardLayout from './components/UI/dashboardLayout/dashboardLayout';
+import Navigation from './components/navigation/navigation';
+import DashboardContainer from './components/UI/dashboardContainer/dashboardContainer';
+import DashboardHero from './components/dashboardHomePage/hero/hero';
+import GenreContainer from './components/dashboardGenrePage/genreContainer/genreContainer';
+import Genre from './components/dashboardGenrePage/genre/genre';
 import styles from '../styles/Home.module.scss';
 import { signIn, useSession } from 'next-auth/client';
 
@@ -43,12 +43,12 @@ export default function Dashboard(props) {
       <Layout>
           <DashboardLayout>
             <Navigation />
-            <MainContainer>
+            <DashboardContainer>
               <DashboardHero />
               <GenreContainer>
                 {genres}
               </GenreContainer>
-            </MainContainer>
+            </DashboardContainer>
           </DashboardLayout>
       </Layout>
     );

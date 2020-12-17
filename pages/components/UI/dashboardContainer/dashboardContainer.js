@@ -1,4 +1,4 @@
-import styles from './mainContainer.module.scss';
+import styles from './dashboardContainer.module.scss';
 import React from 'react';
 
 export default function Chart( props ) {

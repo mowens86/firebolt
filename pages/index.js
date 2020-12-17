@@ -1,4 +1,4 @@
-import Layout from '../pages/components/layout/layout';
+import Layout from '../pages/components/UI/layout/layout';
 import styles from '../styles/Home.module.scss';
 import React from 'react';
 import Link from 'next/link';

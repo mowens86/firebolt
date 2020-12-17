@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Layout from './components/layout/layout';
-import DashboardLayout from './components/dashboard/dashboardLayout';
-import Navigation from './components/dashboard/navigation/navigation';
-import MainContainer from './components/dashboard/containers/mainContainer/mainContainer';
-import DashboardHero from './components/dashboard/hero/hero';
-import ChartsContainer from './components/dashboard/containers/chartsContainer/chartsContainer';
-import Charts from './components/dashboard/charts/charts';
-import MusicPlayer from './components/dashboard/player/player';
+import Layout from './components/UI/layout/layout';
+import DashboardLayout from './components/UI/dashboardLayout/dashboardLayout';
+import Navigation from './components/navigation/navigation';
+import DashboardContainer from './components/UI/dashboardContainer/dashboardContainer';
+import DashboardHero from './components/dashboardHomePage/hero/hero';
+import ChartsContainer from './components/dashboardHomePage/chartsContainer/chartsContainer';
+import Charts from './components/dashboardHomePage/charts/charts';
+import MusicPlayer from './components/dashboardHomePage/player/player';
 import styles from '../styles/Home.module.scss';
 import { signIn, useSession } from 'next-auth/client';
 
@@ -72,13 +72,13 @@ export default function Dashboard(props) {
       <Layout>
           <DashboardLayout>
             <Navigation />
-            <MainContainer>
+            <DashboardContainer>
               <DashboardHero />
               <ChartsContainer>
                 {topTracks}
               </ChartsContainer>
               <MusicPlayer musictrack={track} autoplaysetting={autoplay}/>
-            </MainContainer>
+            </DashboardContainer>
           </DashboardLayout>
       </Layout>
     );

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Layout from './components/layout/layout';
-import DashboardLayout from './components/dashboard/dashboardLayout';
-import Navigation from './components/dashboard/navigation/navigation';
-import MainContainer from './components/dashboard/containers/mainContainer/mainContainer';
-import SearchContainer from './components/dashboard/containers/searchContainer/searchContainer';
-import SearchBar from './components/dashboard/search/searchbar/searchbar';
+import Layout from './components/UI/layout/layout';
+import DashboardLayout from './components/UI/dashboardLayout/dashboardLayout';
+import Navigation from './components/navigation/navigation';
+import DashboardContainer from './components/UI/dashboardContainer/dashboardContainer';
+import SearchContainer from './components/dashboardSearchPage/searchContainer/searchContainer';
+import SearchBar from './components/dashboardSearchPage/searchbar/searchbar';
 import styles from '../styles/Home.module.scss';
 import { signIn, useSession } from 'next-auth/client';
 
@@ -42,11 +42,11 @@ export default function Dashboard(props) {
       <Layout>
           <DashboardLayout>
             <Navigation />
-            <MainContainer>
+            <DashboardContainer>
               <SearchContainer>
                 <SearchBar />
               </SearchContainer>
-            </MainContainer>
+            </DashboardContainer>
           </DashboardLayout>
       </Layout>
     );

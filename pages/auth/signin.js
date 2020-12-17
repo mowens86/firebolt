@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../components/layout/layout';
+import Layout from '../components/UI/layout/layout';
 import styles from './signin.module.scss';
 import { providers, signIn } from 'next-auth/client';
 
