@@ -1,5 +1,5 @@
 import styles from './searchbar.module.scss';
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
  
 export default function Searchbar( props ) {
@@ -29,24 +29,27 @@ export default function Searchbar( props ) {
   }, [url]);
  
   return (
-    <section>
+    <section className={styles.searchBarSection}>
       <form
         onSubmit={event => {
           setUrl(`https://api.deezer.com/search?q=${query}`);
           event.preventDefault();
         }}>
         <input
+          className={styles.searchBarInput}
           type="text"
           value={query}
-          placeholder="Search for songs and artists"
+          placeholder="Search for songs and artists..."
           onChange={event => setQuery(event.target.value)}
         />
-        <button type="button">
+        <button 
+          className={styles.searchBarButton}
+          type="button">
           Search
         </button>
       </form>
 
-      {isError && <div>Something went wrong ...</div>}
+      {/* {isError && <div>Something went wrong ...</div>}
 
       {isLoading ? (
         <div>Loading ...</div>
@@ -59,7 +62,7 @@ export default function Searchbar( props ) {
             </li>
           ))}
       </ul>
-      )}
+      )} */}
     </section>
   );
 };
