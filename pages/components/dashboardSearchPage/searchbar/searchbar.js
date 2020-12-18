@@ -1,5 +1,6 @@
 import styles from './searchbar.module.scss';
 import React, { useState, useEffect } from 'react';
+import Results from '../searchResults/searchResults';
 import axios from 'axios';
  
 export default function Searchbar( props ) {
@@ -27,6 +28,30 @@ export default function Searchbar( props ) {
  
     fetchData();
   }, [url]);
+
+  // // Default top track
+  // let selectedTrack = topTracks.[0].props.trackid;
+  // const [track, setTrack] = useState(selectedTrack);
+  // const [autoplay, setAutoplay] = useState(false);
+  
+  // useEffect(() => {
+  //       // Gather figures holding track ids
+  //       let topTracksCollection = document.getElementsByTagName("Figure");
+  //       // Convert HTMLcollection to an array
+  //       topTracksCollection = [...topTracksCollection];
+  //       // Loop through top tracks
+  //       topTracksCollection.forEach(track => {
+  //         // Add event listener to each figure
+  //         track.addEventListener('click', function() {
+  //           // Convert from string to integer
+  //           selectedTrack = parseInt(track.id);
+  //           // setState to updated track
+  //           setTrack(selectedTrack);
+  //           // setState autoplay on music player to true after selection, default is false on initial page load 
+  //           setAutoplay(true);
+  //         });
+  //       });
+  // });
  
   return (
     <section className={styles.searchBarSection}>
@@ -42,27 +67,50 @@ export default function Searchbar( props ) {
           placeholder="Search for songs and artists..."
           onChange={event => setQuery(event.target.value)}
         />
-        <button 
-          className={styles.searchBarButton}
-          type="button">
-          Search
-        </button>
+        <div className={styles.searchBarButtonWrapper}>
+          <button 
+            className={styles.searchBarButton}
+            type="submit">
+            Search
+          </button>
+        </div>
       </form>
 
-      {/* {isError && <div>Something went wrong ...</div>}
+      {isError && <div>Something went wrong ...</div>}
 
       {isLoading ? (
-        <div>Loading ...</div>
+        <div>Loading Results...</div>
       ) : (
-
-      <ul>
+        
+      <div>
+      {/* {console.log(data.data)} */}
       {data.data.map(item => (
-            <li key={item.id}>
-              <a href={item.preview}>{item.title_short}</a>
-            </li>
+            <Results 
+              key={item.id}
+              trackid={item.id}
+              trackimage={item.album.cover_medium}
+              tracknamelong={item.title_short}
+              trackname={item.title_short}
+              trackartist={item.artist.name}
+              trackpreview={item.preview} 
+            />
           ))}
-      </ul>
-      )} */}
+      </div>
+
+
+      // {isLoading ? (
+      //   <div>Loading Results...</div>
+      // ) : (
+        
+      // <ul>
+      //   {console.log(data.data)}
+      // {data.data.map(item => (
+      //       <li key={item.id}>
+      //         <a href={item.preview}>{item.title_short}</a>
+      //       </li>
+      //     ))}
+      // </ul>
+      )}
     </section>
   );
 };

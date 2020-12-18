@@ -1,0 +1,44 @@
+// Sass Variables
+$dashboardGray: #151620;
+$gray: #2B2D42;
+$lightGray: #8D99AE;
+$offWhite: #EDF2F4;
+$lightRed: #EF233C;
+$red: #D90429;
+$black: #000;
+$headerFont: 'Rubik', sans-serif;
+$bodyFont: 'Lato', sans-serif;
+
+.searchResultsFigure,
+.searchResultsImage {
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.searchResultsFigure {
+    // border: 1px solid $lightGray;
+    width: 200px;
+    padding: 1rem;
+    margin: 1rem 0;
+    text-align: center;
+    transition: all 0.15s ease-in-out;
+    border: 2px solid $dashboardGray;
+    cursor: pointer;
+}
+
+.searchResultsFigure:hover {
+    background-color: #20212e;
+    transform: scale(1.02);
+    border-bottom: 2px solid $red;
+}
+
+.searchResultsImage {
+    width: 80%;
+    max-width: 135px;
+    max-height: 135px;
+}
+
+.figContent h4,
+.figContent p {
+    padding-top: .35rem
+}

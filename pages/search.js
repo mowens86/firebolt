@@ -5,6 +5,7 @@ import Navigation from './components/navigation/navigation';
 import DashboardContainer from './components/UI/dashboardContainer/dashboardContainer';
 import SearchContainer from './components/dashboardSearchPage/searchContainer/searchContainer';
 import SearchBar from './components/dashboardSearchPage/searchbar/searchbar';
+import MusicPlayer from './components/dashboardHomePage/player/player';
 import styles from '../styles/Home.module.scss';
 import { signIn, useSession } from 'next-auth/client';
 
@@ -46,6 +47,7 @@ export default function Dashboard(props) {
               <SearchContainer>
                 <SearchBar />
               </SearchContainer>
+              <MusicPlayer />
             </DashboardContainer>
           </DashboardLayout>
       </Layout>

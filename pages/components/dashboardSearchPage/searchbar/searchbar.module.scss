@@ -14,9 +14,9 @@ $bodyFont: 'Lato', sans-serif;
 }
 
 .searchBarInput {
-    width: 100%;
+    width: 325px;
     background-color: $black;
-    color: $lightRed;
+    color: $offWhite;
     border-radius: 1rem;
     padding: .25rem 1rem;
     position: relative;
@@ -28,7 +28,29 @@ $bodyFont: 'Lato', sans-serif;
     
 }
 
-.searchBarButton {
-    position: absolute;
-    right: 4px;
-}
+.searchBarButtonWrapper {
+    position: relative;
+    top: -43px;
+    left: 238px;
+    text-align: center;
+    width: 200px;
+    .searchBarButton {
+      background-color: $lightRed;
+      font-family: $headerFont;
+      display: block;
+      padding: .25rem 1rem;
+      border: 1px solid $offWhite;
+      border-radius: 30px;
+      color: $offWhite;
+      font-size: .78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 1rem;
+      cursor: pointer;
+      outline: none;
+      transition: .2s all ease-in-out;
+    }
+    .searchBarButton:hover {
+      background-color: $red;
+    }
+  }
