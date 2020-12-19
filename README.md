@@ -16,6 +16,10 @@ After lots of consideration, it looks like I'll be using [Deezer](https://www.de
 
 ### The Firebolt Journey/Journal
 
+#### 12/19/2020
+
+The searchbar styling is complete and looks pretty good. However, I've noticed now that I've included the music player component and I do a new search query and try to click on anything new from the results, the music player will not pull in the data from the new results unless I pause or click on the music player...only then will the new results start working with the music player. I know I can probably include all the code in a single component and that would be a fix I can do for sure. But it'd be a lot of JS and code in a single component and I need to learn how to update/pass the data when a new query is made.
+
 #### 12/15/2020
 
 Continued working on the searchbar and found an outstanding article on how to put something like this together while learning how to use hooks with React. Check it out [here](https://www.robinwieruch.de/react-hooks-fetch-data). 
