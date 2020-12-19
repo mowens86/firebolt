@@ -1,17 +1,47 @@
 import styles from './searchbar.module.scss';
 import React, { useState, useEffect } from 'react';
 import Results from '../searchResults/searchResults';
+// import MusicPlayer from '../../dashboardHomePage/player/player';
 import axios from 'axios';
  
 export default function Searchbar( props ) {
+  
   const [data, setData] = useState({ data: [] });
   const [query, setQuery] = useState('');
+
+  const year = new Date().getFullYear();
   const [url, setUrl] = useState(
-    `https://api.deezer.com/search?q=ludacris`,
+    `https://api.deezer.com/search?q=top+hits+${year}`,
   );
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+
+  // // Music player controls
+  // let selectedTrack = null;
+  // const [track, setTrack] = useState(selectedTrack);
+  // const [autoplay, setAutoplay] = useState(false);
+
+  // // Collect figures and track ids from searched query to listen for any clicks to update the music player  
+  // useEffect(() => {
+  //       // Gather figures holding track ids
+  //       let searchedTracksCollection = document.getElementsByTagName("Figure");
+  //       // Convert HTMLcollection to an array
+  //       searchedTracksCollection = [...searchedTracksCollection];
+  //       // Loop through top tracks
+  //       searchedTracksCollection.forEach(track => {
+  //         // Add event listener to each figure
+  //         track.addEventListener('click', function() {
+  //           // Convert from string to integer
+  //           selectedTrack = parseInt(track.id);
+  //           // setState to updated track
+  //           setTrack(selectedTrack);
+  //           // setState autoplay on music player to true after selection, default is false on initial page load 
+  //           setAutoplay(true);
+  //         });
+  //       });
+  // });
  
+  // Fetch search query data
   useEffect(() => {
     const fetchData = async () => {
       setIsError(false);
@@ -27,39 +57,31 @@ export default function Searchbar( props ) {
     };
  
     fetchData();
-  }, [url]);
+  }, [url]); 
 
-  // // Default top track
-  // let selectedTrack = topTracks.[0].props.trackid;
-  // const [track, setTrack] = useState(selectedTrack);
-  // const [autoplay, setAutoplay] = useState(false);
-  
-  // useEffect(() => {
-  //       // Gather figures holding track ids
-  //       let topTracksCollection = document.getElementsByTagName("Figure");
-  //       // Convert HTMLcollection to an array
-  //       topTracksCollection = [...topTracksCollection];
-  //       // Loop through top tracks
-  //       topTracksCollection.forEach(track => {
-  //         // Add event listener to each figure
-  //         track.addEventListener('click', function() {
-  //           // Convert from string to integer
-  //           selectedTrack = parseInt(track.id);
-  //           // setState to updated track
-  //           setTrack(selectedTrack);
-  //           // setState autoplay on music player to true after selection, default is false on initial page load 
-  //           setAutoplay(true);
-  //         });
-  //       });
-  // });
+  // Searched query results
+  const searchResults = data.data.map(item => {
+    return  <Results 
+              key={item.id}
+              trackid={item.id}
+              trackimage={item.album.cover_medium}
+              tracknamelong={item.title_short}
+              trackname={item.title_short}
+              trackartist={item.artist.name}
+              trackpreview={item.preview} 
+            />
+  });
+
  
   return (
-    <section className={styles.searchBarSection}>
+    <div className={styles.searchBarSection}>
+
       <form
         onSubmit={event => {
           setUrl(`https://api.deezer.com/search?q=${query}`);
           event.preventDefault();
         }}>
+
         <input
           className={styles.searchBarInput}
           type="text"
@@ -67,6 +89,7 @@ export default function Searchbar( props ) {
           placeholder="Search for songs and artists..."
           onChange={event => setQuery(event.target.value)}
         />
+        
         <div className={styles.searchBarButtonWrapper}>
           <button 
             className={styles.searchBarButton}
@@ -82,35 +105,15 @@ export default function Searchbar( props ) {
         <div>Loading Results...</div>
       ) : (
         
-      <div>
+      <div className={styles.searchResultsFlex}>
       {/* {console.log(data.data)} */}
-      {data.data.map(item => (
-            <Results 
-              key={item.id}
-              trackid={item.id}
-              trackimage={item.album.cover_medium}
-              tracknamelong={item.title_short}
-              trackname={item.title_short}
-              trackartist={item.artist.name}
-              trackpreview={item.preview} 
-            />
-          ))}
+       {searchResults}
       </div>
-
-
-      // {isLoading ? (
-      //   <div>Loading Results...</div>
-      // ) : (
-        
-      // <ul>
-      //   {console.log(data.data)}
-      // {data.data.map(item => (
-      //       <li key={item.id}>
-      //         <a href={item.preview}>{item.title_short}</a>
-      //       </li>
-      //     ))}
-      // </ul>
       )}
-    </section>
+
+      {/* <div className={styles.musicPlayerContainer}>
+        <MusicPlayer musictrack={track} autoplaysetting={autoplay}/>
+      </div> */}
+    </div>
   );
 };

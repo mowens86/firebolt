@@ -52,6 +52,17 @@ export default function Dashboard(props) {
         });
   });
 
+  if (loading) {
+    return (
+      <Layout>
+          <section>
+              <h1 className={styles.title}>Firebolt</h1>
+              <h2 className={styles.subTitle}>Loading...</h2>
+          </section>
+      </Layout>
+    );
+  }
+
   if (!session) {
     return (
       <Layout>

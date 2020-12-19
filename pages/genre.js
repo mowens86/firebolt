@@ -9,8 +9,19 @@ import Genre from './components/dashboardGenrePage/genre/genre';
 import styles from '../styles/Home.module.scss';
 import { signIn, useSession } from 'next-auth/client';
 
-export default function Dashboard(props) {
+export default function Genres(props) {
   const [session, loading] = useSession();
+
+  if (loading) {
+    return (
+      <Layout>
+          <section>
+              <h1 className={styles.title}>Firebolt</h1>
+              <h2 className={styles.subTitle}>Loading...</h2>
+          </section>
+      </Layout>
+    );
+  }
   
 
   if (!session) {

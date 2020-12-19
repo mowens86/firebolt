@@ -1,6 +1,5 @@
 import styles from './searchResults.module.scss';
 import React from 'react';
-import Image from 'next/image';
 
 export default function Chart( props ) {
     

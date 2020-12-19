@@ -7,6 +7,17 @@ import { signIn, signOut, useSession } from 'next-auth/client';
 export default function Home() {
   const [ session, loading ] = useSession();
 
+  if (loading) {
+    return (
+      <Layout>
+          <section>
+              <h1 className={styles.title}>Firebolt</h1>
+              <h2 className={styles.subTitle}>Loading...</h2>
+          </section>
+      </Layout>
+    );
+  }
+
   return (
     <Layout>
       

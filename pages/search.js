@@ -1,16 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from './components/UI/layout/layout';
 import DashboardLayout from './components/UI/dashboardLayout/dashboardLayout';
 import Navigation from './components/navigation/navigation';
 import DashboardContainer from './components/UI/dashboardContainer/dashboardContainer';
 import SearchContainer from './components/dashboardSearchPage/searchContainer/searchContainer';
-import SearchBar from './components/dashboardSearchPage/searchbar/searchbar';
+import SearchBarAndResults from './components/dashboardSearchPage/searchbar/searchbar';
 import MusicPlayer from './components/dashboardHomePage/player/player';
 import styles from '../styles/Home.module.scss';
 import { signIn, useSession } from 'next-auth/client';
 
-export default function Dashboard(props) {
+export default function Search(props) {
   const [session, loading] = useSession();
+
+  // Music player controls
+  let selectedTrack = null;
+  const [track, setTrack] = useState(selectedTrack);
+  const [autoplay, setAutoplay] = useState(false);
+
+  // Collect figures and track ids from searched query to listen for any clicks to update the music player  
+  useEffect(() => {
+        // Gather figures holding track ids
+        let searchedTracksCollection = document.getElementsByTagName("Figure");
+        // Convert HTMLcollection to an array
+        searchedTracksCollection = [...searchedTracksCollection];
+        // Loop through top tracks
+        searchedTracksCollection.forEach(track => {
+          // Add event listener to each figure
+          track.addEventListener('click', function() {
+            console.log("clicked");
+            // Convert from string to integer
+            selectedTrack = parseInt(track.id);
+            // setState to updated track
+            setTrack(selectedTrack);
+            // setState autoplay on music player to true after selection, default is false on initial page load 
+            setAutoplay(true);
+          });
+        });
+  });
+
+  if (loading) {
+    return (
+      <Layout>
+          <section>
+              <h1 className={styles.title}>Firebolt</h1>
+              <h2 className={styles.subTitle}>Loading...</h2>
+          </section>
+      </Layout>
+    );
+  }
   
 
   if (!session) {
@@ -29,15 +66,6 @@ export default function Dashboard(props) {
 
   if (session) {
 
-    // const genres = props.genre.data.map((genre) => {
-    //   return <Genre 
-    //             key={genre.id}
-    //             genreid={genre.id}
-    //             genreimage={genre.picture}
-    //             genrename={genre.name}
-    //   />
-    // });
-
     return (
 
       <Layout>
@@ -45,9 +73,10 @@ export default function Dashboard(props) {
             <Navigation />
             <DashboardContainer>
               <SearchContainer>
-                <SearchBar />
+                <SearchBarAndResults />
               </SearchContainer>
-              <MusicPlayer />
+              {/* <MusicPlayer /> */}
+              <MusicPlayer musictrack={track} autoplaysetting={autoplay} />
             </DashboardContainer>
           </DashboardLayout>
       </Layout>
@@ -55,9 +84,3 @@ export default function Dashboard(props) {
 
   }  
 }
-
-//   export const getStaticProps = async () => {
-//     const res = await fetch(`https://api.deezer.com/genre`);
-//     const genre = await res.json();
-//     return { props: { genre } }
-//   }

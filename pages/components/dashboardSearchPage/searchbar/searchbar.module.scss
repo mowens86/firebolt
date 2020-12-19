@@ -54,3 +54,16 @@ $bodyFont: 'Lato', sans-serif;
       background-color: $red;
     }
   }
+
+  .searchResultsFlex {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+  }
+
+  // .musicPlayerContainer {
+  //   position: fixed;
+  //   bottom: 135px;
+  //   right: 18%;
+  //   width: 55%;
+  // }

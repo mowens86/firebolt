@@ -12,6 +12,7 @@ $bodyFont: 'Lato', sans-serif;
 
 .searchSection {
     color:$offWhite;
+    // padding: 3rem 2rem 8rem 2rem;
     padding: 3rem 2rem;
     box-sizing: border-box;
     overflow-y: scroll;
@@ -44,9 +45,4 @@ background: #555;
 .searchSection,
 .searchFigure {
     box-sizing: border-box;
-}
-
-.searchFlexContainer {
-    display: flex;
-    flex-flow: wrap;
 }
