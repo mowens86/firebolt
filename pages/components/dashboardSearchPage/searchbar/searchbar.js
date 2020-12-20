@@ -1,5 +1,5 @@
 // import styles from './searchbar.module.scss';
-// import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 // import Results from '../searchResults/searchResults';
 // // import MusicPlayer from '../../dashboardHomePage/player/player';
 // import axios from 'axios';
