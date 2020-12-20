@@ -15,15 +15,27 @@ import { signIn, useSession } from 'next-auth/client';
 export default function Dashboard(props) {
   const [session, loading] = useSession();
 
+  // Capitalize first letter function
+  const capitalizeFirstLetter = (str) => {
+    if(str.length > 15) str = str.substring(0,15) + '...';
+    return str
+      .toLowerCase()
+      .split(' ')
+      .map(function(word) {
+          return word[0].toUpperCase() + word.substr(1);
+    })
+    .join(' ');
+  };
+
   // Map out top tracks from static props
   const topTracks = props.chart.tracks.data.map((track) => {
     return <Charts 
               key={track.id}
               trackid={track.id}
               trackimage={track.album.cover_medium}
-              tracknamelong={track.title_short}
-              trackname={track.title_short}
-              trackartist={track.artist.name}
+              tracknamelong={capitalizeFirstLetter(track.title_short)}
+              trackname={capitalizeFirstLetter(track.title_short)}
+              trackartist={capitalizeFirstLetter(track.artist.name)}
               trackpreview={track.preview}
             />
   });

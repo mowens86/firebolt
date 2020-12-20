@@ -59,15 +59,27 @@ export default function Searchbar( props ) {
     fetchData();
   }, [url]); 
 
+  // Capitalize first letter function
+  const capitalizeFirstLetter = (str) => {
+    if(str.length > 15) str = str.substring(0,15) + '...';
+    return str
+      .toLowerCase()
+      .split(' ')
+      .map(function(word) {
+          return word[0].toUpperCase() + word.substr(1);
+    })
+    .join(' ');
+  };
+
   // Searched query results
   const searchResults = data.data.map(item => {
     return  <Results 
               key={item.id}
               trackid={item.id}
               trackimage={item.album.cover_medium}
-              tracknamelong={item.title_short}
-              trackname={item.title_short}
-              trackartist={item.artist.name}
+              tracknamelong={capitalizeFirstLetter(item.title_short)}
+              trackname={capitalizeFirstLetter(item.title_short)}
+              trackartist={capitalizeFirstLetter(item.artist.name)}
               trackpreview={item.preview} 
             />
   });
