@@ -16,6 +16,10 @@ After lots of consideration, it looks like I'll be using [Deezer](https://www.de
 
 ### The Firebolt Journey/Journal
 
+#### 12/20/2020
+
+Lumped the searchbar component into the search page itself. This way the music player component would feed in the data directly needed to work fluently between the searchbar component and search page. There were problems with the search query, once a new search query produced results the music player would not work with the updated results. I am sure there is a way to pass the info between components but this is a work around for the time being that way I can work on other parts of this application.
+
 #### 12/19/2020
 
 The searchbar styling is complete and looks pretty good. However, I've noticed now that I've included the music player component and I do a new search query and try to click on anything new from the results, the music player will not pull in the data from the new results unless I pause or click on the music player...only then will the new results start working with the music player. I know I can probably include all the code in a single component and that would be a fix I can do for sure. But it'd be a lot of JS and code in a single component and I need to learn how to update/pass the data when a new query is made.
