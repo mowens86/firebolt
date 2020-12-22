@@ -24,7 +24,7 @@ export default function Search(props) {
 
   const year = new Date().getFullYear();
   const [url, setUrl] = useState(
-    `https://api.deezer.com/search?q=top+hits+${year}`,
+    `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=top+hits+${year}`,
   );
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -36,7 +36,7 @@ export default function Search(props) {
       setIsLoading(true);
 
       try {
-        const result = await axios(url);
+        const result = await axios.get(url);
         setData(result.data);
     } catch (error) {
         setIsError(true);
@@ -137,7 +137,7 @@ export default function Search(props) {
 
                   <form
                     onSubmit={event => {
-                      setUrl(`https://api.deezer.com/search?q=${query}`);
+                      setUrl(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${query}`);
                       event.preventDefault();
                     }}>
 
@@ -165,8 +165,7 @@ export default function Search(props) {
                   ) : (
                     
                   <div className={searchstyles.searchResultsFlex}>
-                  {console.log(data.data)}
-                  {searchResults}
+                    {searchResults}
                   </div>
                   )}
 

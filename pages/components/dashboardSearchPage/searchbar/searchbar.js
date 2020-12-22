@@ -15,31 +15,6 @@ export default function Searchbar( props ) {
   );
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-
-  // // Music player controls
-  // let selectedTrack = null;
-  // const [track, setTrack] = useState(selectedTrack);
-  // const [autoplay, setAutoplay] = useState(false);
-
-  // // Collect figures and track ids from searched query to listen for any clicks to update the music player  
-  // useEffect(() => {
-  //       // Gather figures holding track ids
-  //       let searchedTracksCollection = document.getElementsByTagName("Figure");
-  //       // Convert HTMLcollection to an array
-  //       searchedTracksCollection = [...searchedTracksCollection];
-  //       // Loop through top tracks
-  //       searchedTracksCollection.forEach(track => {
-  //         // Add event listener to each figure
-  //         track.addEventListener('click', function() {
-  //           // Convert from string to integer
-  //           selectedTrack = parseInt(track.id);
-  //           // setState to updated track
-  //           setTrack(selectedTrack);
-  //           // setState autoplay on music player to true after selection, default is false on initial page load 
-  //           setAutoplay(true);
-  //         });
-  //       });
-  // });
  
   // Fetch search query data
   useEffect(() => {

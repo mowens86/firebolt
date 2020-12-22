@@ -16,6 +16,10 @@ After lots of consideration, it looks like I'll be using [Deezer](https://www.de
 
 ### The Firebolt Journey/Journal
 
+#### 12/21/2020
+
+Found a nice little trick to enable CORS anywhere that someone created through heroku. All you have to do is attach it to the front of the http request. Example: https://cors-anywhere.herokuapp.com/https://my.api.getpeople/. Check it out [here](https://cors-anywhere.herokuapp.com/).
+
 #### 12/20/2020
 
 Lumped the searchbar component into the search page itself. This way the music player component would feed in the data directly needed to work fluently between the searchbar component and search page. There were problems with the search query, once a new search query produced results the music player would not work with the updated results. I am sure there is a way to pass the info between components but this is a work around for the time being that way I can work on other parts of this application.
