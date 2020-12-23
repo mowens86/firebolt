@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { signIn, useSession } from 'next-auth/client';
+import { useSession } from 'next-auth/client';
 
 import Layout from './components/UI/layout/layout';
 import DashboardLayout from './components/UI/dashboardLayout/dashboardLayout';

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { signIn, useSession } from 'next-auth/client';
+import { useSession } from 'next-auth/client';
 import axios from 'axios';
 
 import Layout from './components/UI/layout/layout';

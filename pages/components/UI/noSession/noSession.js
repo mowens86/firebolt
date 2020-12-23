@@ -1,3 +1,5 @@
+import React from 'react';
+import { signIn } from 'next-auth/client';
 import Layout from '../layout/layout';
 import styles from '../../../../styles/Home.module.scss';
 
