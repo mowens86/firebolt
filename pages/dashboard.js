@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { signIn, useSession } from 'next-auth/client';
+
 import Layout from './components/UI/layout/layout';
 import DashboardLayout from './components/UI/dashboardLayout/dashboardLayout';
 import Navigation from './components/navigation/navigation';
@@ -7,8 +9,9 @@ import DashboardHero from './components/dashboardHomePage/hero/hero';
 import ChartsContainer from './components/dashboardHomePage/chartsContainer/chartsContainer';
 import Charts from './components/dashboardHomePage/charts/charts';
 import MusicPlayer from './components/dashboardHomePage/player/player';
-import styles from '../styles/Home.module.scss';
-import { signIn, useSession } from 'next-auth/client';
+
+import Loading from './components/UI/loading/loading';
+import NoSession from './components/UI/noSession/noSession';
 
 // import { getSession } from 'next-auth/client';
 
@@ -66,26 +69,13 @@ export default function Dashboard(props) {
 
   if (loading) {
     return (
-      <Layout>
-          <section>
-              <h1 className={styles.title}>Firebolt</h1>
-              <h2 className={styles.subTitle}>Loading...</h2>
-          </section>
-      </Layout>
+      <Loading />
     );
   }
 
   if (!session) {
     return (
-      <Layout>
-          <section>
-              <h1 className={styles.title}>Firebolt</h1>
-              <h2 className={styles.subTitle}>You're not signed in. Please Login.</h2>
-              <div className={styles.linkWrapper}>
-                <a onClick={signIn} className={styles.link}>Login</a>
-              </div>
-          </section>
-      </Layout>
+      <NoSession />
     );
   }
 

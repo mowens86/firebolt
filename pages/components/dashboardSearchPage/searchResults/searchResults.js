@@ -1,5 +1,5 @@
-import styles from './searchResults.module.scss';
 import React from 'react';
+import styles from './searchResults.module.scss';
 
 export default function Chart( props ) {
     

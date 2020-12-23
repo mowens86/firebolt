@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { signIn, useSession } from 'next-auth/client';
 import axios from 'axios';
 
 import Layout from './components/UI/layout/layout';
@@ -6,13 +7,15 @@ import DashboardLayout from './components/UI/dashboardLayout/dashboardLayout';
 import Navigation from './components/navigation/navigation';
 import DashboardContainer from './components/UI/dashboardContainer/dashboardContainer';
 import SearchContainer from './components/dashboardSearchPage/searchContainer/searchContainer';
-// import SearchBarAndResults from './components/dashboardSearchPage/searchbar/searchbar';
 import Results from '../pages/components/dashboardSearchPage/searchResults/searchResults';
 import MusicPlayer from './components/dashboardHomePage/player/player';
-import { signIn, useSession } from 'next-auth/client';
 
-import styles from '../styles/Home.module.scss';
-import searchstyles from '../pages/components/dashboardSearchPage/searchbar/searchbar.module.scss';
+import Loading from './components/UI/loading/loading';
+import NoSession from './components/UI/noSession/noSession';
+
+import styles from '../pages/components/dashboardSearchPage/searchbar/searchbar.module.scss';
+
+// import SearchBarAndResults from './components/dashboardSearchPage/searchbar/searchbar';
 
 
 export default function Search(props) {
@@ -99,27 +102,14 @@ export default function Search(props) {
 
   if (loading) {
     return (
-      <Layout>
-          <section>
-              <h1 className={styles.title}>Firebolt</h1>
-              <h2 className={styles.subTitle}>Loading...</h2>
-          </section>
-      </Layout>
+      <Loading />
     );
   }
   
 
   if (!session) {
     return (
-      <Layout>
-          <section>
-              <h1 className={styles.title}>Firebolt</h1>
-              <h2 className={styles.subTitle}>You're not signed in. Please Login.</h2>
-              <div className={styles.linkWrapper}>
-                <a onClick={signIn} className={styles.link}>Login</a>
-              </div>
-          </section>
-      </Layout>
+      <NoSession />
     );
   }
 
@@ -133,7 +123,7 @@ export default function Search(props) {
             <DashboardContainer>
               <SearchContainer>
                 {/* <SearchBarAndResults /> */}
-                <div className={searchstyles.searchBarSection}>
+                <div className={styles.searchBarSection}>
 
                   <form
                     onSubmit={event => {
@@ -142,16 +132,16 @@ export default function Search(props) {
                     }}>
 
                     <input
-                      className={searchstyles.searchBarInput}
+                      className={styles.searchBarInput}
                       type="text"
                       value={query}
                       placeholder="Search for songs and artists..."
                       onChange={event => setQuery(event.target.value)}
                     />
                     
-                    <div className={searchstyles.searchBarButtonWrapper}>
+                    <div className={styles.searchBarButtonWrapper}>
                       <button 
-                        className={searchstyles.searchBarButton}
+                        className={styles.searchBarButton}
                         type="submit">
                         Search
                       </button>
@@ -164,7 +154,7 @@ export default function Search(props) {
                     <div>Loading Results...</div>
                   ) : (
                     
-                  <div className={searchstyles.searchResultsFlex}>
+                  <div className={styles.searchResultsFlex}>
                     {searchResults}
                   </div>
                   )}
