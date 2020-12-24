@@ -17,7 +17,6 @@ export default function Chart( props ) {
                         <p>{props.trackartist}</p>
                     </figcaption>
                 </div>
-
             </figure>
     )
   }

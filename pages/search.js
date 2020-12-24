@@ -12,13 +12,13 @@ import MusicPlayer from './components/dashboardHomePage/player/player';
 
 import Loading from './components/UI/loading/loading';
 import NoSession from './components/UI/noSession/noSession';
+import SearchError from './components/dashboardSearchPage/searchError/searchError';
+import SearchLoadingResults from './components/dashboardSearchPage/searchLoadingResults/searchLoadingResults';
 
 import styles from '../pages/components/dashboardSearchPage/searchbar/searchbar.module.scss';
 
-// import SearchBarAndResults from './components/dashboardSearchPage/searchbar/searchbar';
 
-
-export default function Search(props) {
+export default function Search() {
   const [session, loading] = useSession();
 
   // Search query states and status
@@ -148,23 +148,16 @@ export default function Search(props) {
                     </div>
                   </form>
 
-                  {isError && <div>Something went wrong ...</div>}
+                  {isError && <SearchError />}
 
-                  {isLoading ? (
-                    <div>Loading Results...</div>
-                  ) : (
-                    
-                  <div className={styles.searchResultsFlex}>
-                    {searchResults}
-                  </div>
+                  {isLoading ? ( <SearchLoadingResults /> ) : (
+                    <div className={styles.searchResultsFlex}>
+                      {searchResults}
+                    </div>
                   )}
 
-                  {/* <div className={styles.musicPlayerContainer}>
-                    <MusicPlayer musictrack={track} autoplaysetting={autoplay}/>
-                  </div> */}
                   </div>
               </SearchContainer>
-              {/* <MusicPlayer /> */}
               <MusicPlayer musictrack={track} autoplaysetting={autoplay} />
             </DashboardContainer>
           </DashboardLayout>

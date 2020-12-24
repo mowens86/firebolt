@@ -16,6 +16,10 @@ After lots of consideration, it looks like I'll be using [Deezer](https://www.de
 
 ### The Firebolt Journey/Journal
 
+#### 12/23/2020
+
+Re-factored some code and put re-used code into components that way it takes up less space on actual pages. I also cleaned up imports that way readability is a little better. I am currently restructuring the layout of the results of the search page that way it looks more like a spreadsheet with artist, trackname, album, and a play button.
+
 #### 12/21/2020
 
 Found a nice little trick to enable CORS anywhere that someone created through heroku. All you have to do is attach it to the front of the http request. Example: https://cors-anywhere.herokuapp.com/https://my.api.getpeople/. Check it out [here](https://cors-anywhere.herokuapp.com/).
