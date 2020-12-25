@@ -7,6 +7,7 @@ import DashboardLayout from './components/UI/dashboardLayout/dashboardLayout';
 import Navigation from './components/navigation/navigation';
 import DashboardContainer from './components/UI/dashboardContainer/dashboardContainer';
 import SearchContainer from './components/dashboardSearchPage/searchContainer/searchContainer';
+import SearchResultsHeader from './components/dashboardSearchPage/searchResultsHeader/searchResultsHeader'
 import Results from '../pages/components/dashboardSearchPage/searchResults/searchResults';
 import MusicPlayer from './components/dashboardHomePage/player/player';
 
@@ -156,7 +157,7 @@ export default function Search() {
 
                   {isLoading ? ( <SearchLoadingResults /> ) : (
                     <div className={styles.searchResultsFlex}>
-                      {console.log(data.data)}
+                      <SearchResultsHeader />
                       {searchResults}
                     </div>
                   )}
