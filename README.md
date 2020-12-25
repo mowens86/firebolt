@@ -16,6 +16,10 @@ After lots of consideration, it looks like I'll be using [Deezer](https://www.de
 
 ### The Firebolt Journey/Journal
 
+#### 12/24/2020
+
+Worked on the search results layout a bit. Will need to figure out a way to possibly bring in a fontawesome playbutton to be used to get the track id to be used play the track on the music player...or maybe I can keep the figure itself holding the id needed to play the song as the way to be a play button in itself. I'll consider using some styling here to see how that looks.
+
 #### 12/23/2020
 
 Re-factored some code and put re-used code into components that way it takes up less space on actual pages. I also cleaned up imports that way readability is a little better. I am currently restructuring the layout of the results of the search page that way it looks more like a spreadsheet with artist, trackname, album, and a play button.
@@ -51,13 +55,13 @@ After a lot of toying with different things I found out that using setState was 
 
 Figured out how to get the id for each figure in the dashboard component by getting all of the figure elements as an HTMLcollection, converting them into and array, and using a forEach method to add an event listener to each of them to grab the id. 
 
-But, now the musicplayer won't update with the variable being used as the props to hold the id. Additionally the event listeners fire off more than once when clicking on a figure element that holds the id. 
+But, now the music player won't update with the variable being used as the props to hold the id. Additionally the event listeners fire off more than once when clicking on a figure element that holds the id. 
 
 #### 12/7/2020
 
 Adjusted the hero image in dashboard to be a background image and set the signout button in the top right corner. Also added in an embedded Deezer music player, this might save me some time from having to build one out entirely which initself would have been a project. But we'll see if I may need to down the road.
 
-I am currently trying to get the Deezer music player to take the id's of the weekly tracks. Currently I can get the ids of the tracks to show when I click on weekly tracks in console.log which is what I need to pass into the music player to play it but I am stuck on how I can pass information from the charts component to the music player component. 
+I am currently trying to get the Deezer music player to take the ids of the weekly tracks. Currently I can get the ids of the tracks to show when I click on weekly tracks in console.log which is what I need to pass into the music player to play it but I am stuck on how I can pass information from the charts component to the music player component. 
 
 Since they're both children components I am not sure if I can pass the id I need between one another. I may have to adjust the charts to be a parent component of the music player component. I will need to do more research.
 
@@ -71,7 +75,7 @@ Figured out a way to map through a component. I feel like I should have known th
 
 #### 12/1/2020
 
-Added styling and fontawesome icons to the navigation bar. Will have to come backaround to finish it when other components/links are created.
+Added styling and fontawesome icons to the navigation bar. Will have to come back around to finish it when other components/links are created.
 
 
 #### 11/30/2020
@@ -97,11 +101,11 @@ After much research it seems like the custom provider set-up and Next Auth itsel
 
 #### 11/17/2020
 
-Looked at other PR's that used the custom provider. It loks like I may have the set-up correct or atleast am close. But now I am getting a 404 error for the oAuth Callback. But it looks like I atleast am getting an access_token.
+Looked at other PR's that used the custom provider. It looks like I may have the set-up correct or atleast am close. But now I am getting a 404 error for the oAuth Callback. But it looks like I atleast am getting an access_token.
 
 #### 11/16/2020
 
-Attempted to try using NextAuth.js, using the custom provider however I am unsure of what links to input in the custom space as it isn't clear cut with the way Deezer exaplins it. After continuously trying different things and reading the docs, I may have stumbled across a complete simulation oAuth 2.0 access with Next.js and Deezer. I am pretty stoked to get through to the callback page after authorization. Will need to test this out more to ensure this is actually right.
+Attempted to try using NextAuth.js, using the custom provider however I am unsure of what links to input in the custom space as it isn't clear cut with the way Deezer explains it. After continuously trying different things and reading the docs, I may have stumbled across a complete simulation oAuth 2.0 access with Next.js and Deezer. I am pretty stoked to get through to the callback page after authorization. Will need to test this out more to ensure this is actually right.
 
 #### 11/14/2020
 
@@ -109,7 +113,7 @@ Short update, currently taking a ReactJS course and decided to break for a bit a
 
 #### 11/7/2020
 
-Will come back to this. After much debate, I think I need to learn more about ReactJS, to get more backbone on how it works, and then learn more about NextJS and oAuth. I'll be back...in maybe a few weeks after some udemy courses and youtube.
+Will come back to this. After much debate, I think I need to learn more about ReactJS, to get more backbone on how it works, and then learn more about NextJS and oAuth. I'll be back...in maybe a few weeks after some Udemy courses and Youtube.
 
 #### 11/6/2020
 

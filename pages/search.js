@@ -52,7 +52,7 @@ export default function Search() {
 
   // Capitalize first letter function
   const capitalizeFirstLetter = (str) => {
-    if(str.length > 15) str = str.substring(0,15) + '...';
+    if(str.length > 15) str = str.substring(0,25) + '...';
     return str
       .toLowerCase()
       .split(' ')
@@ -62,16 +62,20 @@ export default function Search() {
     .join(' ');
   };
 
+  // Results number
+  let count = 1;
+
   // Searched query results
   const searchResults = data.data.map(item => {
     return  <Results 
               key={item.id}
               trackid={item.id}
-              trackimage={item.album.cover_medium}
+              albumtitle={capitalizeFirstLetter(item.album.title)}
               tracknamelong={capitalizeFirstLetter(item.title_short)}
               trackname={capitalizeFirstLetter(item.title_short)}
               trackartist={capitalizeFirstLetter(item.artist.name)}
               trackpreview={item.preview} 
+              resultnumber={count++}
             />
   });
 
@@ -152,6 +156,7 @@ export default function Search() {
 
                   {isLoading ? ( <SearchLoadingResults /> ) : (
                     <div className={styles.searchResultsFlex}>
+                      {console.log(data.data)}
                       {searchResults}
                     </div>
                   )}
