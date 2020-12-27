@@ -23,6 +23,8 @@ $bodyFont: 'Lato', sans-serif;
 
 .searchGrid:hover {
     color: $lightRed;
+    transform: scale(1.02);
+    background-color: $black;
 }
 
 .searchContent {

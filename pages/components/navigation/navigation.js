@@ -8,7 +8,6 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faTable } from '@fortawesome/free-solid-svg-icons';
 import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import styles from './navigation.module.scss';
-// import { getSession } from 'next-auth/client';
 
 export default function Navigation () {
 
@@ -37,20 +36,20 @@ export default function Navigation () {
                     </div>
                 
                 <div className={styles.linkWrapper}>
-                    <Link href="/dashboard">
+                    <Link href="/radio">
                         <a className={styles.link}><FontAwesomeIcon icon={faHeadphones} size="xs" /> <span className={styles.linkSpan}>Radio</span></a>
                     </Link>
-
+{/* 
                     <Link href="/dashboard">
                         <a className={styles.link}><FontAwesomeIcon icon={faMicrophone} size="sm" /> <span className={styles.linkSpan}>Podcast</span></a>
-                    </Link>
+                    </Link> */}
                 </div>
 
-                <div className={styles.linkWrapper}>
+                {/* <div className={styles.linkWrapper}>
                     <Link href="/dashboard">
                         <a className={styles.link}><FontAwesomeIcon icon={faHeart} size="xs" /> <span className={styles.linkSpan}>Favorites</span></a>
                     </Link>
-                </div>
+                </div> */}
 
             </nav>
         </section>

@@ -5,7 +5,7 @@ export default function Chart( props ) {
 
     return (
         <section className={styles.genreSection}>
-            <h2>Genres</h2>
+            <h2>Genres (Under Construction...)</h2>
             <div className={styles.genreFlexContainer}>
                 {props.children} 
             </div>

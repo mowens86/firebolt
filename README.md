@@ -16,6 +16,10 @@ After lots of consideration, it looks like I'll be using [Deezer](https://www.de
 
 ### The Firebolt Journey/Journal
 
+#### 12/26/2020
+
+Buttoned up the search page and started working on the radio page. What I plan for this page is anyone that clicks on a radio station will bring them to a new page with the playlist of tracks from Deezer OR maybe I can re-created a playlist that ends up in the music player...I will have to play with both ideas to see what works better. Also, started working on the FB Next-Auth login...
+
 #### 12/24/2020
 
 Worked on the search results layout a bit. Will need to figure out a way to possibly bring in a fontawesome playbutton to be used to get the track id to be used play the track on the music player...or maybe I can keep the figure itself holding the id needed to play the song as the way to be a play button in itself. I'll consider using some styling here to see how that looks.

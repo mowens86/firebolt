@@ -13,8 +13,6 @@ import MusicPlayer from './components/dashboardHomePage/player/player';
 import Loading from './components/UI/loading/loading';
 import NoSession from './components/UI/noSession/noSession';
 
-// import { getSession } from 'next-auth/client';
-
 export default function Dashboard(props) {
   const [session, loading] = useSession();
 

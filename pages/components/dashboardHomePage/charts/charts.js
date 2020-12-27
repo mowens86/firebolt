@@ -1,5 +1,5 @@
-import styles from './charts.module.scss';
 import React from 'react';
+import styles from './charts.module.scss';
 
 export default function Chart( props ) {
 
