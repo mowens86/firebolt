@@ -16,7 +16,7 @@ export default function Navigation () {
             <div>
                 <h2 className={styles.title}>
                     <span>
-                        <img src="/firebolt.svg" alt="Firebolt Logo" className={styles.logo} />
+                        <img src="/firebolt.svg" alt="Firebolt Logo" width="16px" height="16px" className={styles.logo} />
                     </span> Firebolt</h2>
             </div>
             <nav className={styles.navigation}>

@@ -10,14 +10,15 @@ export default function Footer() {
             href="https://www.deezer.com/us/"
             target="_blank"
             rel="noopener noreferrer">
-              <img src="/firebolt.svg" alt="Firebolt Logo" className={styles.logo} />
-            {' '} Music data powered by:
+              <img src="/firebolt.svg" alt="Firebolt Logo" width="12px" height="12px" className={styles.logo} />
+            {' '} Music data powered by
             
           </a>
             <a 
+              rel="noopener noreferrer"
               href="https://www.deezer.com/us/"
               target="_blank">
-                <img src="/deezer.png" alt="Firebolt Logo" className={styles.deezer} />
+                <img src="/deezer_small.png" alt="Firebolt Logo" width="150px" height="60px" className={styles.deezer} />
             </a>
         </footer>
     )

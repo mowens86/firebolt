@@ -22,7 +22,6 @@ $bodyFont: 'Lato', sans-serif;
   .footerLink {
     padding-top: 1rem;
     color: $offWhite;
-    text-decoration: underline;
     transition: .15s all ease-in-out;
   }
   
@@ -31,9 +30,11 @@ $bodyFont: 'Lato', sans-serif;
   }
 
   .logo {
-    height: 1em;
+    height: 12px;
+    width: 12px;
   }
   
   .deezer {
     width: 150px;
+    height: 60px;
   }

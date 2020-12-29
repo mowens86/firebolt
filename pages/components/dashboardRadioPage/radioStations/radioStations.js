@@ -11,8 +11,7 @@ export default function RadioStations(props) {
                 className={styles.radioImage} 
                 src={props.radioimage}
                 alt={props.radiotitle} 
-                title={props.radiotitle}
-                width={135} height={135}/>
+                title={props.radiotitle}/>
             <div>
                 <figcaption className={styles.figContent}>
                     <h4>{props.radiotitle}</h4>

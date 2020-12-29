@@ -18,7 +18,7 @@ export default function Radio(props) {
     // console.log(props.radio.data);
 
     const topRadioStations = props.radio.data.map((station) => {
-        console.log(station);
+        // console.log(station);
         return <RadioStations 
             key={station.id}
             radioid={station.id}

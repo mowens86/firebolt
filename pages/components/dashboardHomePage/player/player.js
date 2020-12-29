@@ -6,6 +6,7 @@ export default function MusicPlayer(props) {
     return (
     <div>
         <iframe 
+            title="Deezer Music Player"
             className={styles.Player} 
             scrolling="no" 
             frameBorder="0" 

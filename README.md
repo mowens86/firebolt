@@ -16,6 +16,10 @@ After lots of consideration, it looks like I'll be using [Deezer](https://www.de
 
 ### The Firebolt Journey/Journal
 
+#### 12/28/2020
+
+Improved Lighthouse scores for Best Practice from 79 to 93 by cleaning up dynamic images with CSS classes from the Deezer API. Also, improved SEO from 90 to 100 by adding in meta tags to the head of the application. Lastly, improved the Accessibility score from 79 to 91 by adding a title tag to the Deezer Music Player and adding the lang attribute to the html tag.
+
 #### 12/26/2020
 
 Buttoned up the search page and started working on the radio page. What I plan for this page is anyone that clicks on a radio station will bring them to a new page with the playlist of tracks from Deezer OR maybe I can re-created a playlist that ends up in the music player...I will have to play with both ideas to see what works better. Also, started working on the FB Next-Auth login...
