@@ -12,11 +12,11 @@ const options = {
     Providers.Google({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET
-    }),
-    Providers.Facebook({
-      clientId: process.env.FACEBOOK_CLIENT_ID,
-      clientSecret: process.env.FACEBOOK_CLIENT_SECRET
     })
+    // Providers.Facebook({
+    //   clientId: process.env.FACEBOOK_CLIENT_ID,
+    //   clientSecret: process.env.FACEBOOK_CLIENT_SECRET
+    // })
     // Providers.Twitter({
     //   clientId: process.env.TWITTER_CLIENT_ID,
     //   clientSecret: process.env.TWITTER_CLIENT_SECRET

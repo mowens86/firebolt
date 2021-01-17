@@ -4,6 +4,7 @@ import styles from './signin.module.scss';
 import { providers, signIn } from 'next-auth/client';
 
 export default function SignIn({ providers }) {
+  console.log(providers.facebook);
   return (
     <Layout>
       
@@ -15,20 +16,20 @@ export default function SignIn({ providers }) {
                 <h2 className={styles.title}>Firebolt</h2>
               </div>
         
-          {Object.values(providers).map(provider => (
+            {Object.values(providers).map(provider => (
 
               <div 
                   className={styles.linkWrapper} 
                   key={provider.name}>
                 <a 
                   className={styles.link} 
-                  onClick={() => signIn(provider.id, { callbackUrl: 'http://localhost:3000/dashboard' })}
+                  onClick={() => signIn(provider.id, { callbackUrl: '/dashboard' })}
                   >Sign in with {provider.name}
                 </a>
 
               </div>
             
-          ))}
+            ))}
             </div>
           </div>
       </div>
