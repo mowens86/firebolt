@@ -97,7 +97,7 @@ export default function Dashboard(props) {
   }  
 }
 
-  export const getStaticProps = async () => {
+  export const getServerSideProps = async () => {
     const res = await fetch(`https://api.deezer.com/chart`);
     const chart = await res.json();
     return { props: { chart } }
