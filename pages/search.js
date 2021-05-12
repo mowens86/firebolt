@@ -28,7 +28,7 @@ export default function Search() {
 
   const year = new Date().getFullYear();
   const [url, setUrl] = useState(
-    `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=top+hits+${year}`,
+    `https://thingproxy.freeboard.io/fetch/https://api.deezer.com/search?q=top+hits+${year}`,
   );
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -132,7 +132,7 @@ export default function Search() {
 
                   <form
                     onSubmit={event => {
-                      setUrl(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${query}`);
+                      setUrl(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/search?q=${query}`);
                       event.preventDefault();
                     }}>
 

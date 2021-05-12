@@ -4,7 +4,7 @@ import styles from './signin.module.scss';
 import { providers, signIn } from 'next-auth/client';
 
 export default function SignIn({ providers }) {
-  console.log(providers.facebook);
+  console.log();
   return (
     <Layout>
       

@@ -64,7 +64,7 @@ export default function Radio(props) {
     )
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
     const res = await fetch(`https://api.deezer.com/radio/top`);
     const radio = await res.json();
     return { props: { radio } }; // will be passed to the page component as props
